@@ -1,0 +1,20 @@
+.attribute-input {
+    background-color: #836ADE;
+    color: #F0F3FF;
+}
+
+.attribute-input:focus {
+    background-color: #836ADE;
+    color: #F0F3FF;
+    border-color: #86C7FF;
+}
+
+.attribute-input::placeholder {
+    color: #F0F3FF;
+}
+
+.attribute-button {
+    background-color: #A96ADE;
+    color: #F0F3FF;
+    border-color: #86C7FF;
+}

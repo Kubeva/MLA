@@ -3,10 +3,6 @@ body {
   color: aliceblue;
 }
 
-.mla-list {
-    background-color: #2E2E3B;
-}
-
-.mla-item {
-    background-color: #303034;
+.spinner-color {
+    color: #836ADE;
 }
