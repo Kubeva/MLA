@@ -1,23 +1,73 @@
-import '../CSS/ListPage.css'
-//import listData from '../assets/list_data.json'
+import { useEffect, useState } from "react";
+import { Table, Button } from "react-bootstrap"
+import '../CSS/ListPage.css';
+import BookModal from "./BookModal";
+
 
 function ListPage() {
-  // const [listElements, setListElements] = useState([]);
+  const [loading, setLoading] = useState([]);
+  const [database, setDatabase] = useState([]);
+  const [showBook, setShowBook] = useState(false);
 
-  // useEffect(() => {
-  //   setListElements(listData);
-  // }, []);
+  const databaseAttributes = database.length > 0 ? Object.keys(database[0]) : [];
+
+  const fetchDatabase = async () => {
+      try{
+        const res = await fetch("http://localhost:4000/database");
+        const data = await res.json();
+        setDatabase(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+  
+    useEffect(() => {
+      fetchDatabase();
+    }, []);
 
   return (
     <>
       <div className="container p-3">
         <h1 className="mb-4">Reading list</h1>
-        <ul className="list-group mla-list">
-          <li></li>
-        </ul>
+        {loading ? (
+          <div className="spinner-border spinner-color" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        ) : database.length === 0 ? (
+          <p className="text-danger">No elements in JSON</p>
+        ) : (
+          <Table className="mla-table mt-4">
+            <thead>
+              <tr>
+                {databaseAttributes.map((attribute) => (
+                  <th className="pe-3" scope="col" key={attribute}>{attribute}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {database.map((item) => (
+                <tr key={item.id}>
+                  {Object.values(item).map((itemValue, index) =>
+                    index === 0 ? (
+                      <td className="pe-3" key={index} scope="row">{String(itemValue)}</td>
+                    ) : (
+                      <td className="pe-3" key={index}>{String(itemValue) || "N\\A"}</td>
+                    )
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        )}
+        <div className="d-flex justify-content-end">
+          <Button className="mla-button" onClick={() => setShowBook(true)}>Add a book</Button>
+            <BookModal show={showBook} onClose={() => setShowBook(false)} />
+        </div>
       </div>
     </>
-  )
+  );
 }
 
 export default ListPage

@@ -3,6 +3,42 @@ body {
   color: aliceblue;
 }
 
+.mla-table th,
+.mla-table td {
+  background-color: #2B2B2B;
+  color: aliceblue;
+}
+
+.mla-button {
+    background-color: #A96ADE;
+    color: #F0F3FF;
+    border-color: #86C7FF;
+}
+
+.mla-button:hover {
+    background-color: #9A61C9;
+}
+
+.mla-button:active {
+    background-color: #915BBD !important;
+    border-color: #7CB7EB !important;
+}
+
+.mla-modal-header {
+  background-color: #212121;
+  color: aliceblue;
+}
+
+.mla-modal-body {
+  background-color: #212121;
+  color: aliceblue;
+}
+
+.mla-modal-footer {
+  background-color: #212121;
+  color: aliceblue;
+}
+
 .spinner-color {
     color: #836ADE;
 }

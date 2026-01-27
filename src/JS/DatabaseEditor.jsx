@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
-import '../CSS/DatabaseEditor.css'
+import { useEffect, useState } from "react";
+import { Form, Button, Table } from "react-bootstrap";
+import '../CSS/DatabaseEditor.css';
 
 function DatabaseEditor() {
   const [database, setDatabase] = useState([]);
@@ -143,87 +144,87 @@ function DatabaseEditor() {
         <div className="container p-2">
           <h2>Example</h2>
           {loading ? (
-            <div class="spinner-border spinner-color" role="status">
-              <span class="visually-hidden">Loading...</span>
+            <div className="spinner-border spinner-color" role="status">
+              <span className="visually-hidden">Loading...</span>
             </div>
           ) : database.length === 0 ? (
             <p className="text-danger">No elements in JSON</p>
           ) : (
-            <table className="mt-4">
+            <Table className="mla-table mt-4">
               <thead>
                 <tr>
-                  <th className="pe-3">Attribute</th>
-                  <th className="pe-3">Example value</th>
+                  <th className="pe-3" scope="col">Attribute</th>
+                  <th className="pe-3" scope="col">Example value</th>
                   <th>Value type</th>
                 </tr>
               </thead>
               <tbody>
                 {databaseAttributes.map((attribute) =>(
                   <tr key={attribute}>
-                    <td className="fw-bold pe-3">{attribute}</td>
+                    <td className="fw-bold pe-3" scope="row">{attribute}</td>
                     <td className="pe-3">{database[0][attribute]?.toString() || "N/A"}</td>
                     <td>{getType(database[0][attribute])}</td>
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </Table>
           )}
         </div>
         <div className="container p-2">
           <h2>Modify Database</h2>
-          <form onSubmit={addNewAttribute} className="mt-4">
+          <Form onSubmit={addNewAttribute}>
             <div className="row g-3 align-items-end">
-              <div className="col-md-5">
-                <label className="form-label">Add New Attribute</label>
-                <input 
-                  className="form-control attribute-input" 
+              <Form.Group className="col-md-5">
+                <Form.Label>Add New Attribute</Form.Label>
+                <Form.Control 
+                  className="attribute-input" 
                   type="text" 
                   value={newAttribute} 
                   placeholder="Enter attribute name"
                   onChange={(e) => setNewAttribute(e.target.value)} />
-              </div>
-              <div className="col-md-2">
-                <label className="form-label"></label>
-                <select className="form-select attribute-input" value={newType} onChange={(e) => setNewType(e.target.value)}>
-                  <option value="">Choose type</option>
+              </Form.Group>
+              <Form.Group className="col-md-2">
+                <Form.Label className="form-label"></Form.Label>
+                <Form.Select className="attribute-input" value={newType} onChange={(e) => setNewType(e.target.value)}>
+                  <option>Choose type</option>
                   <option value="string">String</option>
                   <option value="number">Number</option>
                   <option value="boolean">Boolean</option>
                   <option value="array">Array</option>
                   <option value="object">Object</option>
-                </select>
-              </div>
-              <div className="col-md-2">
-                <button className="btn btn-primary attribute-button" type="submit">
+                </Form.Select>
+              </Form.Group>
+              <Form.Group className="col-md-2">
+                <Button className="mla-button" type="submit">
                   Add attribute
-                </button>
-              </div>
+                </Button>
+              </Form.Group>
             </div>
-          </form>
+          </Form>
           {formAddError && <div className="text-danger mt-2">{formAddError}</div>}
-          <form onSubmit={deleteExistingAttribute} className="mt-4">
+          <Form onSubmit={deleteExistingAttribute} className="mt-4">
             <div className="row g-3 align-items-end">
-              <div className="col-md-5">
-                <label className="form-label">Delete Attribute</label>
-                <input 
-                  className="form-control attribute-input" 
+              <Form.Group className="col-md-5">
+                <Form.Label>Delete Attribute</Form.Label>
+                <Form.Control 
+                  className="attribute-input" 
                   type="text" 
                   value={deleteAttribute} 
                   placeholder="Enter attribute name"
                   onChange={(e) => setDeleteAttribute(e.target.value)} />
-              </div>
-              <div className="col-md-2">
-                <button className="btn btn-danger" type="submit">
+              </Form.Group>
+              <Form.Group className="col-md-2">
+                <Button className="btn-danger" type="submit">
                   Delete attribute
-                </button>
-              </div>
+                </Button>
+              </Form.Group>
             </div>
-          </form>
+          </Form>
           {formDeleteError && <div className="text-danger mt-2">{formDeleteError}</div>}
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default DatabaseEditor
