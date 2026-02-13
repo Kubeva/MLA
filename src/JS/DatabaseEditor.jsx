@@ -108,11 +108,11 @@ function DatabaseEditor() {
 
   const getFormDefaultValueType = (type) => {
     switch(type) {
-      case "string": return "";
+      case "string": return "String";
       case "number": return 0;
       case "boolean": return false;
-      case "array": return [];
-      case "object": return {};
+      case "array": return [1, 2, 3];
+      case "object": return {a: 1, b: "c"};
     }
   }
 

@@ -23,4 +23,18 @@ app.post("/database", (req, res) => {
     res.json({ message: "Saved!" });
 });
 
+app.post("/database/addItem", (req, res) => {
+    const newItem = req.body;
+    const data = JSON.parse(fs.readFileSync(dbPath));
+
+    const maxId = data.length > 0 ? Math.max(...data.map(item => item.id)) : 1;
+
+    newItem.id = maxId + 1;
+
+    data.push(newItem);
+    fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
+
+    res.json({message: "Item added."});
+})
+
 app.listen(4000, () => console.log("Backend running on port 4000"));

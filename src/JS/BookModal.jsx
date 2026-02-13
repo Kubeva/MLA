@@ -1,6 +1,68 @@
 import { Modal, Form, Button} from "react-bootstrap";
+import { useState, useEffect } from "react";
 
-function BookModal({ show, onClose }) {
+function BookModal({ show, onClose, attributes }) {
+  const [newItem, setNewItem] = useState({});
+
+  const getType = (value) => {
+    if(Array.isArray(value)) return "array";
+    return typeof value;
+  };
+
+  const handleChange = (attribute, value) => {
+    setNewItem(prev => ({
+      ...prev,
+      [attribute]: value
+    }));
+  };
+
+  const addItemToDatabase = async (e) => {
+    e.preventDefault();
+
+    if (!validateNewItem(newItem)) return;
+
+    try {
+      const res = await fetch("http://localhost:4000/database/addItem", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newItem)
+      });
+
+      if(!res.ok){
+        throw new Error("Failed to add item.");
+      }
+
+      console.log("Added item to database.");
+      setNewItem({});
+      onClose();
+    } catch (err) {
+      console.error(err);
+      alert(err);
+    }
+  };
+
+  const validateNewItem = (item) => {
+    for (const [attribute, value] of Object.entries(item)) {
+      if (!value) {
+        alert(`${attribute} is empty`);
+        return false;
+      }
+    }
+    return true;
+  };
+
+  useEffect(() => {
+    if (attributes && attributes.length > 0) {
+      const initial = attributes.reduce((acc, attr) => {
+        acc[attr] = attr === "id" ? -1 : "";
+        return acc;
+      }, {});
+      setNewItem(initial);
+    }
+  }, [attributes]);
+
   return (
     <Modal show={show} onHide={onClose}>
       <Modal.Header closeButton className="mla-modal-header">
@@ -8,14 +70,23 @@ function BookModal({ show, onClose }) {
       </Modal.Header>
       <Modal.Body className="mla-modal-body">
         <Form>
-          <Form.Group>
-            <Form.Control type="text" />
-          </Form.Group>
+          {attributes
+            .filter(attribute => attribute !== "id")
+            .map((attribute) => (
+            <Form.Group className="m-2" key={attribute}>
+              <Form.Control
+                className="attribute-input"
+                type="text"
+                value={newItem[attribute] || ""}
+                placeholder={`Name:"${attribute}"       Type:"${getType(attribute)}"`} 
+                onChange={(e) => handleChange(attribute, e.target.value)} />
+            </Form.Group>
+          ))}
         </Form>
       </Modal.Body>
       <Modal.Footer className="mla-modal-footer">
-        <Button className="mla-button">Save</Button>
-        <Button className="btn-secondary" onClick={onClose}>Close</Button>
+        <Button className="mla-button" onClick={addItemToDatabase}>Save</Button>
+        <Button className="btn-danger" onClick={onClose}>Close</Button>
       </Modal.Footer>
     </Modal>
   );

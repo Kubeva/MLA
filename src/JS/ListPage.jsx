@@ -47,13 +47,15 @@ function ListPage() {
               </tr>
             </thead>
             <tbody>
-              {database.map((item) => (
+              {database
+                .filter(item => item.id !== 0)
+                .map((item) => (
                 <tr key={item.id}>
-                  {Object.values(item).map((itemValue, index) =>
+                  {databaseAttributes.map((attribute, index) =>
                     index === 0 ? (
-                      <td className="pe-3" key={index} scope="row">{String(itemValue)}</td>
+                      <td className="pe-3" key={`${attribute}_${index}`} scope="row">{String(item[attribute])}</td>
                     ) : (
-                      <td className="pe-3" key={index}>{String(itemValue) || "N\\A"}</td>
+                      <td className="pe-3" key={`${attribute}_${index}`}>{String(item[attribute]) || "N\\A"}</td>
                     )
                   )}
                 </tr>
@@ -63,7 +65,7 @@ function ListPage() {
         )}
         <div className="d-flex justify-content-end">
           <Button className="mla-button" onClick={() => setShowBook(true)}>Add a book</Button>
-            <BookModal show={showBook} onClose={() => setShowBook(false)} />
+            <BookModal show={showBook} onClose={() => setShowBook(false)} attributes={databaseAttributes}/>
         </div>
       </div>
     </>
