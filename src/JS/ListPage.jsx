@@ -11,6 +11,11 @@ function ListPage() {
 
   const databaseAttributes = database.length > 0 ? Object.keys(database[0]) : [];
 
+  const getType = (value) => {
+    if(Array.isArray(database[0][value])) return "array";
+    return typeof database[0][value];
+  };
+
   const fetchDatabase = async () => {
       try{
         const res = await fetch("http://localhost:4000/database");
@@ -65,7 +70,7 @@ function ListPage() {
         )}
         <div className="d-flex justify-content-end">
           <Button className="mla-button" onClick={() => setShowBook(true)}>Add a book</Button>
-            <BookModal show={showBook} onClose={() => setShowBook(false)} attributes={databaseAttributes}/>
+            <BookModal show={showBook} onClose={() => setShowBook(false)} attributes={databaseAttributes} getType={getType}/>
         </div>
       </div>
     </>

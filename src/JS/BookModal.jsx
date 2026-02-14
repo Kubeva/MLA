@@ -1,13 +1,9 @@
 import { Modal, Form, Button} from "react-bootstrap";
 import { useState, useEffect } from "react";
+import MLAFormStatusSelect from "./Components/MLAFormStatusSelect";
 
-function BookModal({ show, onClose, attributes }) {
+function BookModal({ show, onClose, attributes, getType }) {
   const [newItem, setNewItem] = useState({});
-
-  const getType = (value) => {
-    if(Array.isArray(value)) return "array";
-    return typeof value;
-  };
 
   const handleChange = (attribute, value) => {
     setNewItem(prev => ({
@@ -74,12 +70,19 @@ function BookModal({ show, onClose, attributes }) {
             .filter(attribute => attribute !== "id")
             .map((attribute) => (
             <Form.Group className="m-2" key={attribute}>
+              {attribute === "status" ? (
+              <MLAFormStatusSelect value={newItem[attribute] || ""} onChange={handleChange}/> 
+              ) : (
               <Form.Control
                 className="attribute-input"
-                type="text"
+                {...(attribute === "description"
+                  ? {as: "textarea", rows: 4}
+                  : { type: getType(attribute) === "string" ? "text" : "number" }
+                )}
                 value={newItem[attribute] || ""}
-                placeholder={`Name:"${attribute}"       Type:"${getType(attribute)}"`} 
+                placeholder={`${attribute}`} 
                 onChange={(e) => handleChange(attribute, e.target.value)} />
+              )} 
             </Form.Group>
           ))}
         </Form>
