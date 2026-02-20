@@ -1,0 +1,21 @@
+.mla-badge {
+  background: #A96ADE !important;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+}
+
+.mla-tags-search {
+  background-color: #836ADE;
+}
+
+.mla-tags-search-item {
+  padding: 0.1rem 0.3rem;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.mla-tags-search-item.highlight {
+  background-color: #A96ADE;
+  color: aliceblue;
+}

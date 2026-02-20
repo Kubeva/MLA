@@ -1,8 +1,9 @@
 import { Modal, Form, Button} from "react-bootstrap";
 import { useState, useEffect } from "react";
-import MLAFormStatusSelect from "./Components/MLAFormStatusSelect";
+import MLAFormStatusSelect from "./MLAFormStatusSelect";
+import MLATagInput from "./MLATagInput";
 
-function BookModal({ show, onClose, attributes, getType }) {
+function BookModal({ show, onClose, attributes, getType, fetchDatabase }) {
   const [newItem, setNewItem] = useState({});
 
   const handleChange = (attribute, value) => {
@@ -32,6 +33,7 @@ function BookModal({ show, onClose, attributes, getType }) {
 
       console.log("Added item to database.");
       setNewItem({});
+      fetchDatabase();
       onClose();
     } catch (err) {
       console.error(err);
@@ -72,6 +74,8 @@ function BookModal({ show, onClose, attributes, getType }) {
             <Form.Group className="m-2" key={attribute}>
               {attribute === "status" ? (
               <MLAFormStatusSelect value={newItem[attribute] || ""} onChange={handleChange}/> 
+              ) : attribute === "tags" ? (
+              <MLATagInput value={newItem[attribute] || []} onChange={handleChange} />
               ) : (
               <Form.Control
                 className="attribute-input"

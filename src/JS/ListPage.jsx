@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap"
 import '../CSS/ListPage.css';
-import BookModal from "./BookModal";
+import BookModal from "./Components/AddBookModal";
 
 
 function ListPage() {
@@ -17,20 +17,24 @@ function ListPage() {
   };
 
   const fetchDatabase = async () => {
-      try{
-        const res = await fetch("http://localhost:4000/database");
-        const data = await res.json();
-        setDatabase(data);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
+    try {
+      const res = await fetch("http://localhost:4000/database");
+      const data = await res.json();
+      setDatabase(data);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
+  };
+
+  const closeAddBookModal = () => {
+    setShowBook(false);
+  }
   
-    useEffect(() => {
-      fetchDatabase();
-    }, []);
+  useEffect(() => {
+    fetchDatabase();
+  }, []);
 
   return (
     <>
@@ -70,7 +74,12 @@ function ListPage() {
         )}
         <div className="d-flex justify-content-end">
           <Button className="mla-button" onClick={() => setShowBook(true)}>Add a book</Button>
-            <BookModal show={showBook} onClose={() => setShowBook(false)} attributes={databaseAttributes} getType={getType}/>
+            <BookModal 
+            show={showBook} 
+            onClose={closeAddBookModal} 
+            attributes={databaseAttributes} 
+            getType={getType}
+            fetchDatabase={fetchDatabase}/>
         </div>
       </div>
     </>

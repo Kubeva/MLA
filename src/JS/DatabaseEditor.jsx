@@ -117,7 +117,7 @@ function DatabaseEditor() {
   }
 
   const fetchDatabase = async () => {
-    try{
+    try {
       const res = await fetch("http://localhost:4000/database");
       const data = await res.json();
       setDatabase(data);

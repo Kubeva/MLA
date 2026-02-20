@@ -6,12 +6,12 @@ function MLAHeader() {
   return (
   <Navbar className="mla-header" expand="lg">
     <Container>
-      <Navbar.Brand as={Link} to="/">MLA</Navbar.Brand>
+      <Navbar.Brand className="mla-nav-link" as={Link} to="/">MLA</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse>
         <Nav>
-          <Nav.Link as={Link} to="/">List</Nav.Link>
-          <Nav.Link as={Link} to="DBEditor">Database Editor</Nav.Link>
+          <Nav.Link className="mla-nav-link" as={Link} to="/">List</Nav.Link>
+          <Nav.Link className="mla-nav-link" as={Link} to="DBEditor">Database Editor</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>
