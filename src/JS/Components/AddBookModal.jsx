@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import MLAFormStatusSelect from "./MLAFormStatusSelect";
 import MLATagInput from "./MLATagInput";
 
-function BookModal({ show, onClose, attributes, getType, fetchDatabase }) {
+function AddBookModal({ show, onClose, attributes, getType, fetchDatabase }) {
   const [newItem, setNewItem] = useState({});
 
   const handleChange = (attribute, value) => {
@@ -99,4 +99,4 @@ function BookModal({ show, onClose, attributes, getType, fetchDatabase }) {
   );
 }
 
-export default BookModal
+export default AddBookModal

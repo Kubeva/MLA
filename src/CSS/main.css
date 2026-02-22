@@ -9,6 +9,10 @@ body {
   color: aliceblue;
 }
 
+.mla-table-row {
+  cursor: pointer;
+}
+
 .mla-button {
     background-color: #A96ADE;
     color: #F0F3FF;
@@ -37,6 +41,45 @@ body {
 .mla-modal-footer {
   background-color: #212121;
   color: aliceblue;
+}
+
+.mla-description {
+  background-color: #1a1a1a;
+  padding: 14px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  color: #F0F3FF;
+  line-height: 1.5;
+}
+
+.mla-modal-label {
+  color: #9aa0b5;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mla-modal-value {
+  color: #F0F3FF;
+  font-weight: 500;
+}
+
+.mla-link {
+  color: #6C63FF;
+  text-decoration: none;
+}
+
+.mla-link:hover {
+  text-decoration: underline;
+}
+
+.mla-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  margin-left: -16px;
+  margin-right: -16px;
 }
 
 .attribute-input {

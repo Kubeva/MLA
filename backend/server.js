@@ -24,7 +24,6 @@ app.get("/database", (req, res) => {
     const data = JSON.parse(file);
     res.json(data);
   } catch (err) {
-    console.error("Error reading database:", err);
     res.status(500).json({ error: "Failed to read database" });
   }
 });
@@ -42,7 +41,6 @@ app.post("/database", (req, res) => {
 
     res.json({ message: "Saved!" });
   } catch(err) {
-    console.error(err);
     res.status(500).json({ error: "Failed to add attribute to database" });
   }
 });
@@ -66,7 +64,6 @@ app.post("/database/addItem", (req, res) => {
 
     res.json({message: "Item added."});
   } catch(err) {
-    console.error(err);
     res.status(500).json({ error: "Failed to add item to database" });
   }
 })
@@ -84,33 +81,31 @@ app.get("/tags", (req, res) => {
     const data = JSON.parse(file);
     res.json(data);
   } catch (err) {
-    console.error("Error reading tags:", err);
     res.status(500).json({ error: "Failed to read tags" });
   }
 });
 
 app.post("/tags/addTag", (req, res) => {
-    try {
-        const newTag = req.body;
-        const file = fs.readFileSync(tagsPath, "utf-8");
+  try {
+    const newTag = req.body;
+    const file = fs.readFileSync(tagsPath, "utf-8");
 
-        if (!file.trim()) {
-        return res.json([]);
-        }
-
-        const data = JSON.parse(file);
-
-        const maxId = data.length > 0 ? Math.max(...data.map(tag => tag.id)) : 0;
-        newTag.id = maxId + 1;
-
-        data.push(newTag);
-        fs.writeFileSync(tagsPath, JSON.stringify(data, null, 2));
-
-        res.json({message: "Tag added."});
-    } catch(err) {
-        console.error(err);
-        res.status(500).json({ error: "Failed to add tag" });
+    if (!file.trim()) {
+    return res.json([]);
     }
+
+    const data = JSON.parse(file);
+
+    const maxId = data.length > 0 ? Math.max(...data.map(tag => tag.id)) : 0;
+    newTag.id = maxId + 1;
+
+    data.push(newTag);
+    fs.writeFileSync(tagsPath, JSON.stringify(data, null, 2));
+
+    res.json({message: "Tag added."});
+  } catch(err) {
+    res.status(500).json({ error: "Failed to add tag" });
+  }
 });
 
 app.listen(4000, () => console.log("Backend running on port 4000"));
