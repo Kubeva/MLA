@@ -15,7 +15,7 @@ function MLATagInput({ value = [], onChange }) {
     } catch (err) {
       console.error(err);
     } finally {
-      console.log("Successfully fetched tags");
+      console.log("Tried fetching tags");
     }
   };
 
@@ -70,7 +70,7 @@ function MLATagInput({ value = [], onChange }) {
       e.preventDefault();
       if (highlightedIndex >=0 && highlightedIndex < filteredTags.length) {
         await addTag(filteredTags[highlightedIndex].name);
-      } else if (input.trim !== "") {
+      } else if (input.trim() !== "") {
         await addTag(input.trim());
       }
     }

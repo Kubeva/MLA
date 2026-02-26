@@ -68,6 +68,31 @@ app.post("/database/addItem", (req, res) => {
   }
 })
 
+app.post("/database/editItem", (req, res) => {
+  try {
+    const editedItem = req.body;
+    const file = fs.readFileSync(dbPath, "utf-8");
+
+    if (!file.trim()) {
+      return res.json([]);
+    }
+    const data = JSON.parse(fs.readFileSync(dbPath));
+
+    const index = data.findIndex(item => item.id === editedItem.id);
+    if (index === -1){
+      return res.status(404).json({ error: "Item not found" });
+    }
+
+    data[index] = editedItem;
+
+    fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
+
+    res.json({message: "Item updated."});
+  } catch(err) {
+    res.status(500).json({ error: "Failed to edit item in database" });
+  }
+})
+
 //API for tags
 
 app.get("/tags", (req, res) => {

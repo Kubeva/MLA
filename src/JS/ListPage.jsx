@@ -110,7 +110,9 @@ function ListPage() {
           show={showBookDetailsModal}
           onClose={closeBookDetailsModal}
           selectedBook={selectedBook}
-          getStatus={getStatus}/>
+          setSelectedBook={setSelectedBook}
+          getStatus={getStatus}
+          fetchDatabase={fetchDatabase}/>
         </div>
       </div>
     </>
