@@ -3,6 +3,7 @@ import cors from "cors";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { getFormDefaultValueType } from "./extra.js"
 
 const app = express();
 app.use(cors());
@@ -24,24 +25,70 @@ app.get("/database", (req, res) => {
     const data = JSON.parse(file);
     res.json(data);
   } catch (err) {
+    console.log(err)
     res.status(500).json({ error: "Failed to read database" });
   }
 });
 
-app.post("/database", (req, res) => {
+app.post("/database/addAttribute", (req, res) => {
   try {
-    const newData = req.body;
+    const { name, type } = req.body;
     const file = fs.readFileSync(dbPath, "utf-8");
 
     if (!file.trim()) {
       return res.json([]);
     }
 
-    fs.writeFileSync(dbPath, JSON.stringify(newData, null, 2));
+    const data = JSON.parse(file);
 
-    res.json({ message: "Saved!" });
+    const exists = data.some(item => Object.hasOwn(item, name))
+    if(exists){
+      return res.status(409).json({ message: "Attribute already exists." });
+    }
+
+    const defaultValue = getFormDefaultValueType(type);
+    const updatedDatabase = data.map((item) => ({
+      ...item,
+      [name]: defaultValue
+    }));
+
+    fs.writeFileSync(dbPath, JSON.stringify(updatedDatabase, null, 2));
+
+    res.status(201).json({ message: "Added attribute." });
   } catch(err) {
+    console.log(err)
     res.status(500).json({ error: "Failed to add attribute to database" });
+  }
+});
+
+app.post("/database/deleteAttribute", (req, res) => {
+  try {
+    const { name } = req.body;
+    const file = fs.readFileSync(dbPath, "utf-8");
+
+    if (!file.trim()) {
+      return res.json([]);
+    }
+
+    const data = JSON.parse(file);
+
+    const exists = data.some(item => Object.hasOwn(item, name));
+    if(!exists){
+      return res.status(409).json({ message: "Attribute doesn't exist." });
+    }
+
+    const updatedDatabase = data.map(item => {
+      const newItem = { ...item };
+      delete newItem[name];
+      return newItem;
+    });
+
+    fs.writeFileSync(dbPath, JSON.stringify(updatedDatabase, null, 2));
+
+    res.status(201).json({ message: "Deleted attribute." });
+  } catch(err) {
+    console.log(err)
+    res.status(500).json({ error: "Failed to delete attribute from database" });
   }
 });
 
@@ -55,6 +102,11 @@ app.post("/database/addItem", (req, res) => {
     }
     const data = JSON.parse(fs.readFileSync(dbPath));
 
+    const exists = data.some(item => item.name === newItem.name)
+    if(exists){
+      return res.status(409).json({ message: "Item already exists." });
+    }
+
     const maxId = data.length > 0 ? Math.max(...data.map(item => item.id)) : 0;
 
     newItem.id = maxId + 1;
@@ -64,6 +116,7 @@ app.post("/database/addItem", (req, res) => {
 
     res.json({message: "Item added."});
   } catch(err) {
+    console.log(err)
     res.status(500).json({ error: "Failed to add item to database" });
   }
 })
@@ -89,6 +142,7 @@ app.post("/database/editItem", (req, res) => {
 
     res.json({message: "Item updated."});
   } catch(err) {
+    console.log(err)
     res.status(500).json({ error: "Failed to edit item in database" });
   }
 })
@@ -106,6 +160,7 @@ app.get("/tags", (req, res) => {
     const data = JSON.parse(file);
     res.json(data);
   } catch (err) {
+    console.log(err)
     res.status(500).json({ error: "Failed to read tags" });
   }
 });
@@ -116,10 +171,15 @@ app.post("/tags/addTag", (req, res) => {
     const file = fs.readFileSync(tagsPath, "utf-8");
 
     if (!file.trim()) {
-    return res.json([]);
+      return res.json([]);
     }
 
     const data = JSON.parse(file);
+
+    const exists = data.some(tag => tag.name === newTag.name)
+    if(exists){
+      return res.status(409).json({ message: "Tag already exists." });
+    }
 
     const maxId = data.length > 0 ? Math.max(...data.map(tag => tag.id)) : 0;
     newTag.id = maxId + 1;
@@ -129,6 +189,7 @@ app.post("/tags/addTag", (req, res) => {
 
     res.json({message: "Tag added."});
   } catch(err) {
+    console.log(err)
     res.status(500).json({ error: "Failed to add tag" });
   }
 });

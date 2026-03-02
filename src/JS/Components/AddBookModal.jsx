@@ -5,12 +5,18 @@ import MLATagInput from "./MLATagInput";
 
 function AddBookModal({ show, onClose, attributes, getType, fetchDatabase }) {
   const [newItem, setNewItem] = useState({});
+  const [formError, setFormError] = useState("");
 
   const handleChange = (attribute, value) => {
     setNewItem(prev => ({
       ...prev,
       [attribute]: value
     }));
+  };
+
+  const handleClose = () => {
+    setNewItem({});
+    setFormError("");
   };
 
   const addItemToDatabase = async (e) => {
@@ -33,6 +39,7 @@ function AddBookModal({ show, onClose, attributes, getType, fetchDatabase }) {
 
       console.log("Added item to database.");
       setNewItem({});
+      setFormError("");
       fetchDatabase();
       onClose();
     } catch (err) {
@@ -44,7 +51,7 @@ function AddBookModal({ show, onClose, attributes, getType, fetchDatabase }) {
   const validateNewItem = (item) => {
     for (const [attribute, value] of Object.entries(item)) {
       if (!value) {
-        alert(`${attribute} is empty`);
+        setFormError(`${attribute} is empty`);
         return false;
       }
     }
@@ -62,7 +69,7 @@ function AddBookModal({ show, onClose, attributes, getType, fetchDatabase }) {
   }, [attributes]);
 
   return (
-    <Modal show={show} onHide={onClose}>
+    <Modal show={show} onHide={onClose} onExited={handleClose}>
       <Modal.Header closeButton className="mla-modal-header">
         <Modal.Title className="modal-title">Book Edit</Modal.Title>
       </Modal.Header>
@@ -90,6 +97,7 @@ function AddBookModal({ show, onClose, attributes, getType, fetchDatabase }) {
             </Form.Group>
           ))}
         </Form>
+        {formError && <div className="text-danger mt-2">{formError}</div>}
       </Modal.Body>
       <Modal.Footer className="mla-modal-footer">
         <Button className="mla-button" onClick={addItemToDatabase}>Save</Button>
@@ -99,4 +107,4 @@ function AddBookModal({ show, onClose, attributes, getType, fetchDatabase }) {
   );
 }
 
-export default AddBookModal
+export default AddBookModal;

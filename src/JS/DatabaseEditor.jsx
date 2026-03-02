@@ -28,33 +28,28 @@ function DatabaseEditor() {
 
     setFormAddError("");
 
-    if(database.length > 0 && attrName in database[0]) {
+    if(database.some(item => Object.hasOwn(item, attrName))) {
       alert("Attribute already exists");
       return;
     }
 
-    let defaultValue = getFormDefaultValueType(newType);
-
-    const updatedDatabase = database.map((item) => ({
-      ...item,
-      [attrName]: defaultValue
-    }));
-
     try {
-      const res = await fetch("http://localhost:4000/database", {
+      const res = await fetch("http://localhost:4000/database/addAttribute", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(updatedDatabase)
+        body: JSON.stringify({
+          name: attrName,
+          type: newType
+        })
       });
 
       if(!res.ok){
         throw new Error("Failed to save JSON.");
       }
 
-      console.log("Saved JSON file.");
-      setDatabase(updatedDatabase);
+      fetchDatabase();
       setNewAttribute("");
     } catch(err) {
       console.error(err);
@@ -73,48 +68,35 @@ function DatabaseEditor() {
 
     setFormAddError("");
 
-    if(database.length > 0 && !(attrName in database[0])) {
-      alert(`Attribute "${attrName}" doesn't exist`);
+    if(!database.some(item => Object.hasOwn(item, attrName))) {
+      alert("Attribute doesn't exist");
       return;
     }
 
-    const updatedDatabase = database.map(item => {
-      const newItem = { ...item };
-      delete newItem[attrName];
-      return newItem;
-    });
-
     try {
-      const res = await fetch("http://localhost:4000/database", {
+      const res = await fetch("http://localhost:4000/database/deleteAttribute", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(updatedDatabase)
+        body: JSON.stringify({name: attrName})
       });
 
+      const data = await res.json(); 
+
       if(!res.ok){
-        throw new Error(`Failed to delete "${attrName}"`);
+        const errMsg = data.message || data.error || "Failed to delete attribute";
+        throw new Error(errMsg);
       }
 
       console.log(`Deleted "${attrName}" in JSON file.`);
-      setDatabase(updatedDatabase);
+      fetchDatabase();
       setDeleteAttribute("");
     } catch(err) {
       console.error(err);
       alert(err);
     }
   };
-
-  const getFormDefaultValueType = (type) => {
-    switch(type) {
-      case "string": return "String";
-      case "number": return 0;
-      case "boolean": return false;
-      case "array": return [1, 2, 3];
-      case "object": return {a: 1, b: "c"};
-    }
-  }
 
   const fetchDatabase = async () => {
     try {
