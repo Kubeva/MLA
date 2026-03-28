@@ -1,17 +1,47 @@
-import { useEffect, useState } from "react";
-import { Table, Button } from "react-bootstrap"
+import { useEffect, useState, useMemo } from "react";
+import { Table, Button } from "react-bootstrap";
+import Fuse from "fuse.js";
 import AddBookModal from "./Components/AddBookModal";
 import BookDetailsModal from "./Components/BookDetailsModal";
-
+import MLASearchBar from "./Components/MLASearchBar";
 
 function ListPage() {
   const [loading, setLoading] = useState([]);
   const [database, setDatabase] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
   const [showAddBookModal, setShowAddBookModal] = useState(false);
   const [showBookDetailsModal, setShowBookDetailsModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState({});
 
   const databaseAttributes = database.length > 0 ? Object.keys(database[0]) : [];
+
+  const { searchKey, searchValue } = useMemo(() => {
+    let key = "name";
+    let value = "";
+    if (searchInput.startsWith("tags:")) {
+      key = "tags";
+      value = searchInput.split(":")[1].trim();
+    } else {
+      key = "name";
+      value = searchInput;
+    }
+
+    return { searchKey: key, searchValue: value}
+  }, [searchInput]);
+
+  const fuseObject = useMemo(() => {
+    return new Fuse(database, {
+      keys: [searchKey],
+      threshold: 0.0,
+      ignoreLocation: true,
+      minMatchCharLength: 2,
+      shouldSort: false
+    });
+  }, [database, searchKey]);
+
+  const filteredDatabase = searchValue 
+    ? fuseObject.search(searchValue).map(result => result.item)
+    : database;
 
   const getType = (value) => {
     if(Array.isArray(database[0][value])) return "array";
@@ -56,6 +86,7 @@ function ListPage() {
     <>
       <div className="container p-3">
         <h1 className="mb-4">Reading list</h1>
+        <MLASearchBar search={searchInput} setSearch={setSearchInput} />
         {loading ? (
           <div className="spinner-border spinner-color" role="status">
             <span className="visually-hidden">Loading...</span>
@@ -74,7 +105,7 @@ function ListPage() {
               </tr>
             </thead>
             <tbody>
-              {database
+              {filteredDatabase
                 .filter(item => item.id !== 0)
                 .map((item) => (
                 <tr

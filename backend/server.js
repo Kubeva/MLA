@@ -23,7 +23,7 @@ app.get("/database", (req, res) => {
     }
 
     const data = JSON.parse(file);
-    res.json(data);
+    res.status(201).json(data);
   } catch (err) {
     console.log(err)
     res.status(500).json({ error: "Failed to read database" });
@@ -100,7 +100,7 @@ app.post("/database/addItem", (req, res) => {
     if (!file.trim()) {
       return res.json([]);
     }
-    const data = JSON.parse(fs.readFileSync(dbPath));
+    const data = JSON.parse(file);
 
     const exists = data.some(item => item.name === newItem.name)
     if(exists){
@@ -187,7 +187,7 @@ app.post("/tags/addTag", (req, res) => {
     data.push(newTag);
     fs.writeFileSync(tagsPath, JSON.stringify(data, null, 2));
 
-    res.json({message: "Tag added."});
+    res.status(201).json({message: "Tag added."});
   } catch(err) {
     console.log(err)
     res.status(500).json({ error: "Failed to add tag" });
