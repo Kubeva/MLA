@@ -12,6 +12,7 @@ function ListPage() {
   const [showAddBookModal, setShowAddBookModal] = useState(false);
   const [showBookDetailsModal, setShowBookDetailsModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState({});
+  const [statusFilter, setStatusFilter] = useState("");
 
   const databaseAttributes = database.length > 0 ? Object.keys(database[0]) : [];
 
@@ -86,7 +87,12 @@ function ListPage() {
     <>
       <div className="container p-3">
         <h1 className="mb-4">Reading list</h1>
-        <MLASearchBar search={searchInput} setSearch={setSearchInput} />
+        <MLASearchBar 
+          search={searchInput} 
+          searchOnChange={setSearchInput} 
+          statusValue={statusFilter} 
+          statusOnChange={setStatusFilter}
+          />
         {loading ? (
           <div className="spinner-border spinner-color" role="status">
             <span className="visually-hidden">Loading...</span>
@@ -97,16 +103,17 @@ function ListPage() {
           <Table className="mla-table mt-4">
             <thead>
               <tr>
-                <th className="pe-3" scope="col">id</th>
-                <th className="pe-3" scope="col">Name</th>
-                <th className="pe-3" scope="col">Current chapter</th>
-                <th className="pe-3" scope="col">Status</th>
-                <th className="pe-3" scope="col">Tags</th>
+                <th className="mla-table-id-col pe-3" scope="col">id</th>
+                <th className="mla-table-name-col pe-3" scope="col">Name</th>
+                <th className="mla-table-curr-chap-col pe-3" scope="col">Current chapter</th>
+                <th className="mla-table-status-col pe-3" scope="col">Status</th>
+                <th className="mla-table-tags-col pe-3" scope="col">Tags</th>
               </tr>
             </thead>
             <tbody>
               {filteredDatabase
                 .filter(item => item.id !== 0)
+                .filter(item => !statusFilter || item.status === statusFilter)
                 .map((item) => (
                 <tr
                 className="mla-table-row"

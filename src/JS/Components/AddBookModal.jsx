@@ -80,7 +80,7 @@ function AddBookModal({ show, onClose, attributes, getType, fetchDatabase }) {
             .map((attribute) => (
             <Form.Group className="m-2" key={attribute}>
               {attribute === "status" ? (
-              <MLAFormStatusSelect value={newItem[attribute] || ""} onChange={handleChange}/> 
+              <MLAFormStatusSelect value={newItem[attribute] || ""} onChange={handleChange} type={"status"} /> 
               ) : attribute === "tags" ? (
               <MLATagInput value={newItem[attribute] || []} onChange={handleChange} />
               ) : (

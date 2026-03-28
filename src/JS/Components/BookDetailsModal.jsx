@@ -87,7 +87,12 @@ function BookDetailsModal({ show, onClose, selectedBook, setSelectedBook, getSta
             </div>
             <div className="mla-detail">
               <span className="mla-modal-label">Status</span>
-              <MLAFormStatusSelect style={{ width: "200px" }} value={editedItem.status || ""} onChange={handleChange}/>
+              <MLAFormStatusSelect 
+                style={{ width: "200px" }} 
+                value={editedItem.status || ""} 
+                onChange={handleChange}
+                type={"status"}
+                />
             </div>
             <div className="mla-detail">
               <span className="mla-modal-label">Tags</span>

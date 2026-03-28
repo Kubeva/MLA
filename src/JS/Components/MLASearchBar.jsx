@@ -1,14 +1,21 @@
+import MLAFormStatusSelect from "./MLAFormStatusSelect";
+import "../../CSS/MLASearchBar.css";
 
-function MLASearchBar({ search, setSearch }) {
+function MLASearchBar({ search, searchOnChange, statusValue, statusOnChange }) {
 
   return (
-    <div>
+    <div className="search-container">
       <input
-        className="attribute-input"
+        className="mla-search-bar"
         type="text"
         placeholder="Search"
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => searchOnChange(e.target.value)}
+      />
+      <MLAFormStatusSelect 
+        style={{ width: "215px" }} 
+        value={statusValue || ""} 
+        onChange={statusOnChange}
       />
     </div>
   )

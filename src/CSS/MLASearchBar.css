@@ -1,0 +1,25 @@
+.search-container {
+  display: flex;
+  gap: 15px;
+}
+
+.mla-search-bar {
+  background-color: #836ADE;
+  color: #F0F3FF;
+  padding-left: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.mla-search-bar:focus {
+  background-color: #836ADE;
+  color: #F0F3FF;
+  outline-color: #86C7FF;
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+.mla-search-bar::placeholder {
+  color: #F0F3FF;
+}

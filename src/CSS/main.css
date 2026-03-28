@@ -3,6 +3,10 @@ body {
   color: aliceblue;
 }
 
+.mla-table {
+  table-layout: fixed
+}
+
 .mla-table th,
 .mla-table td {
   background-color: #2B2B2B;
@@ -11,6 +15,26 @@ body {
 
 .mla-table-row {
   cursor: pointer;
+}
+
+.mla-table-id-col {
+  width: 5%
+}
+
+.mla-table-name-col {
+  width: 44%
+}
+
+.mla-table-curr-chap-col {
+  width: 16%
+}
+
+.mla-table-status-col {
+  width: 10%
+}
+
+.mla-table-tags-col {
+  width: 25%
 }
 
 .mla-button {
