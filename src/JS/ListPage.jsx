@@ -13,8 +13,11 @@ function ListPage() {
   const [showBookDetailsModal, setShowBookDetailsModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState({});
   const [statusFilter, setStatusFilter] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const databaseAttributes = database.length > 0 ? Object.keys(database[0]) : [];
+  const pageSize = 20;
+  const pageItemIndexStart = (currentPage - 1) * pageSize;
 
   const { searchKey, searchValue } = useMemo(() => {
     let key = "name";
@@ -40,9 +43,17 @@ function ListPage() {
     });
   }, [database, searchKey]);
 
-  const filteredDatabase = searchValue 
+  const searchDatabase = searchValue 
     ? fuseObject.search(searchValue).map(result => result.item)
     : database;
+
+  const filteredDatabase = searchDatabase.filter(item => item.id !== 0)
+    .filter(item => !statusFilter || item.status === statusFilter)
+
+  const maxPages = Math.ceil(filteredDatabase.length / pageSize);
+
+  const paginatedDatabase = filteredDatabase
+    .slice(pageItemIndexStart, pageItemIndexStart + pageSize);
 
   const getType = (value) => {
     if(Array.isArray(database[0][value])) return "array";
@@ -83,6 +94,10 @@ function ListPage() {
     fetchDatabase();
   }, []);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [statusFilter, searchInput]);
+
   return (
     <>
       <div className="container p-3">
@@ -111,9 +126,7 @@ function ListPage() {
               </tr>
             </thead>
             <tbody>
-              {filteredDatabase
-                .filter(item => item.id !== 0)
-                .filter(item => !statusFilter || item.status === statusFilter)
+              {paginatedDatabase
                 .map((item) => (
                 <tr
                 className="mla-table-row"
@@ -136,6 +149,22 @@ function ListPage() {
             </tbody>
           </Table>
         )}
+        <div className="d-flex justify-content-center">
+          <Button 
+            className="mla-button" 
+            onClick={() => setCurrentPage(prev => prev - 1)} 
+            disabled={currentPage === 1}>Prev</Button>
+          {Array.from({ length: maxPages }, (_, i) => i + 1).map(page => (
+            <Button 
+              className={`mla-button ${currentPage === page ? "currentPage" : ""}`} 
+              key={page} 
+              onClick={() => setCurrentPage(page)}>{page}</Button>
+          ))}
+          <Button 
+            className="mla-button" 
+            onClick={() => setCurrentPage(prev => prev + 1)} 
+            disabled={currentPage === maxPages}>Next</Button>
+        </div>
         <div className="d-flex justify-content-end">
           <Button className="mla-button" onClick={() => setShowAddBookModal(true)}>Add a book</Button>
           <AddBookModal 
