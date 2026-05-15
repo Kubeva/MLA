@@ -2,8 +2,10 @@ import express from "express";
 import cors from "cors";
 import fs from "fs";
 import path from "path";
+import multer from "multer";
 import { fileURLToPath } from "url";
 import { getFormDefaultValueType } from "./extra.js"
+import sharp from "sharp";
 
 const app = express();
 app.use(cors());
@@ -13,6 +15,41 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const dbPath = path.join(__dirname, "list_data.json");
 const tagsPath = path.join(__dirname, "tags.json");
+const imagesPath = path.join(__dirname, "images/");
+const imageExtensions = ["jpg", "jpeg", "png"];
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, imagesPath);
+  },
+  filename: function (req, file, cb) {
+    const name = req.params.id;
+    const ext = path.extname(file.originalname);
+
+    for (const ext of imageExtensions) {
+      const oldPath = path.join(imagesPath, `${name}.${ext}`);
+
+      if(fs.existsSync(oldPath)) {
+        fs.unlinkSync(oldPath);
+      }
+    }
+
+    cb(null, `${name}${ext}`);
+  }
+})
+
+const uploadImage = multer({ 
+  storage: storage,
+  fileFilter: function (req, file, cb) {
+    const allowed = ["image/jpeg", "image/png"];
+
+    if (allowed.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error("Invalid file type"));
+    }
+  }
+});
 
 app.get("/database", (req, res) => {
   try {
@@ -140,12 +177,60 @@ app.post("/database/editItem", (req, res) => {
 
     fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
 
-    res.json({message: "Item updated."});
+    res.json({message: `Item ${editedItem.id} updated.`});
   } catch(err) {
     console.log(err)
     res.status(500).json({ error: "Failed to edit item in database" });
   }
-})
+});
+
+app.get("/database/getImageById/:id", (req, res) => {
+  try {
+    const id = req.params.id;
+
+    if (!id){
+      return res.status(400).json({ error: "Id is null." });
+    }
+
+    let filePath = null;
+
+    for (const ext of imageExtensions) {
+      const examplePath = path.join(imagesPath, `${id}.${ext}`);
+
+      if(fs.existsSync(examplePath)) {
+        filePath = examplePath;
+        break;
+      }
+    }
+
+    if (!filePath) {
+      return res.status(404).json({ error: "Image not found" });
+    }
+
+    res.set("Content-Type", "image/jpeg");
+
+    sharp(filePath)
+      .resize({ 
+        width: 200, 
+        height: 276,
+        fit: "inside"
+      })
+      .jpeg()
+      .pipe(res);
+  } catch(err) {
+    console.log(err)
+    res.status(500).json({ error: "Failed to find image." });
+  }
+});
+
+app.post("/database/uploadImage/:id", uploadImage.single("image"), (req, res) => {
+  try {
+    return res.json({ message: "Image uploaded."});
+  } catch(err) {
+    console.log(err)
+    res.status(500).json({ error: "Failed to upload image." });
+  }
+});
 
 //API for tags
 

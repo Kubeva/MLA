@@ -11,6 +11,8 @@ node_modules
 backend/node_modules
 backend/list_data.json
 backend/tags.json
+backend/images/*
+!backend/images/.gitkeep
 dist
 dist-ssr
 *.local

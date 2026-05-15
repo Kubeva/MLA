@@ -1,0 +1,1397 @@
+[
+  {
+    "id": 0,
+    "name": "String",
+    "description": "String",
+    "current_chapter": "String",
+    "link": "String",
+    "status": "String",
+    "tags": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Ascendance of a Bookworm",
+    "description": "Myne lubi książki.",
+    "current_chapter": "Part 5 Vol 12",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=6907.0",
+    "status": "finished",
+    "tags": [
+      "Najlepsze",
+      "Isekai",
+      "Fantasy",
+      "LN"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Mushoku Tensei -Isekai Ittara Honki Dasu-",
+    "description": "Świetne.",
+    "current_chapter": "LN: 20 WN: Redundancy",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1954.0",
+    "status": "finished",
+    "tags": [
+      "Najlepsze",
+      "Isekai",
+      "Harem",
+      "Actual Romance",
+      "LN"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "description": "Subaru umiera.",
+    "current_chapter": "Arc 9 Curtain’s Close",
+    "link": "https://witchculttranslation.com/table-of-content/",
+    "status": "reading",
+    "tags": [
+      "Najlepsze",
+      "Isekai",
+      "WN"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Spice and Wolf",
+    "description": "Holo czy Horo?\nChyba później niż tom 18, może nawet 21 ale nie pamiętam.",
+    "current_chapter": "Vol 18?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1256.135",
+    "status": "reading",
+    "tags": [
+      "Najlepsze",
+      "Medival",
+      "Actual Romance",
+      "LN"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "The Empty Box and Zeroth Maria",
+    "description": "Puste pudełko.",
+    "current_chapter": "Vol 7",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1211.0",
+    "status": "finished",
+    "tags": [
+      "Najlepsze",
+      "Romance",
+      "Supernatural",
+      "LN"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Unnamed Memory",
+    "description": "Tappei poleca.\nKupiłem jap wersję afterstory ale nie przeczytałem więcej niż 10 stron.\nJest też inna seria w tym samym świecie.",
+    "current_chapter": "Vol 6",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=8634.0",
+    "status": "reading",
+    "tags": [
+      "Najlepsze",
+      "Romance",
+      "Fantasy",
+      "LN"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Call of the Night",
+    "description": "Fallin fallin.\nJest jeszcze \"Yofukashi no Uta - Rakuen-hen\", które przeczytałem.",
+    "current_chapter": "Chapter 200",
+    "link": "https://mangadex.org/title/259dfd8a-f06a-4825-8fa6-a2dcd7274230",
+    "status": "finished",
+    "tags": [
+      "Fantasy",
+      "Modern",
+      "Slice of life",
+      "Manga",
+      "Najlepsze",
+      "Actual Romance"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "City of Sin",
+    "description": "Tytuł zmyla.",
+    "current_chapter": "Book 9 Chapter 146",
+    "link": "https://novelbin.com/b/city-of-sin#tab-chapters-title",
+    "status": "finished",
+    "tags": [
+      "PZMoN",
+      "Chinese",
+      "Fantasy",
+      "Progression fantasy",
+      "Actual Romance",
+      "WN"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Road to Kingdom",
+    "description": "Meat stick.\nPo main story są jeszcze bonusowe chaptery. Aktualnie jestem na Battle of Pumpkin: Creation.",
+    "current_chapter": "Chapter 580 + SP",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=2068.0",
+    "status": "reading",
+    "tags": [
+      "18+",
+      "Medival",
+      "Fantasy",
+      "PZMoN",
+      "Harem",
+      "WN"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Zero no Tsukaima",
+    "description": "Ale zjebane zakończenie.",
+    "current_chapter": "Vol 22",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1621.0",
+    "status": "finished",
+    "tags": [
+      "Isekai",
+      "Romance",
+      "PZMoN",
+      "Fantasy",
+      "LN"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Altina the Sword Princess",
+    "description": "Wydawało się fajne na początku ale potem eh. i chyba jest na hiatusie od lat.",
+    "current_chapter": "Vol 1",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1467.0",
+    "status": "bored",
+    "tags": [
+      "Fantasy",
+      "LN"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "An Archdemon's Dilemma: How to Love Your Elf Bride",
+    "description": "O dziwo przyjemne ale potem trochę nudne.",
+    "current_chapter": "Vol 11?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=3460.15",
+    "status": "bored",
+    "tags": [
+      "Fantasy",
+      "Romance",
+      "Comedy",
+      "Slice of life",
+      "LN"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "The Ancient Magus' Bride",
+    "description": "Dobre do części z harrym potterem.",
+    "current_chapter": "Ch 70-90?",
+    "link": "https://mangadex.org/title/195023bf-cf9a-4772-94ef-09dd6eddea84",
+    "status": "reading",
+    "tags": [
+      "Romance",
+      "Fantasy",
+      "Modern",
+      "Manga"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Arifureta Shokugyou de Sekai Saikyou",
+    "description": "Do królika było dobre.",
+    "current_chapter": "Vol 9-10?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1703.0",
+    "status": "bored",
+    "tags": [
+      "Romance",
+      "Fantasy",
+      "Isekai",
+      "Harem",
+      "LN"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Beatless",
+    "description": "Dobra książka, która o dziwo ma coś do powiedzenia w sprawie AI zanim ludzie jeszcze wiedzieli co to chatGPT.",
+    "current_chapter": "Vol 2",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=7790.0",
+    "status": "finished",
+    "tags": [
+      "Sci-fi",
+      "Philosophical",
+      "LN",
+      "Actual Romance",
+      "Good"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Berserk of Gluttony",
+    "description": "Dobre do 1 tomu",
+    "current_chapter": "Vol 4?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=4925.0",
+    "status": "bored",
+    "tags": [
+      "Fantasy",
+      "Romance",
+      "LN"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Black Clover",
+    "description": "Asta krzyczy.",
+    "current_chapter": "?",
+    "link": "https://mangadex.org/title/e7eabe96-aa17-476f-b431-2497d5e9d060/black-clover?page=1",
+    "status": "reading",
+    "tags": [
+      "Fantasy",
+      "Manga",
+      "Shounen"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Blame!",
+    "description": "Dziwne, ale fascynujące. Jest też extra chapter, który przeczytałem.",
+    "current_chapter": "Ch 65",
+    "link": "https://mangadex.org/title/b905f827-8d48-4948-b58c-0d6fd330d10d/blame",
+    "status": "finished",
+    "tags": [
+      "Sci-fi",
+      "Weird",
+      "Manga"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Confinement King",
+    "description": "Pierwsze co czytałem od tego autora. Szkoda że jest na hiatusie",
+    "current_chapter": "Ch 446?",
+    "link": "https://www.tinytranslation.xyz/series/confinement/",
+    "status": "reading",
+    "tags": [
+      "18+",
+      "Modern",
+      "Harem",
+      "Fantasy",
+      "WN",
+      "Good",
+      "Hiatus"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Campione!",
+    "description": "Nie wiem jak ja tak długo z tym wytrzymałem.",
+    "current_chapter": "Vol 19?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1714.0",
+    "status": "bored",
+    "tags": [
+      "Harem",
+      "Fantasy",
+      "Modern",
+      "LN"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Classroom of the Elite",
+    "description": "Szybko dodaje.",
+    "current_chapter": "Vol 10?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=3168.150",
+    "status": "reading",
+    "tags": [
+      "Modern",
+      "School life",
+      "LN"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Cradle series",
+    "description": "Gratitude. Got from Annas Archive.",
+    "current_chapter": "Vol 13",
+    "link": "-",
+    "status": "finished",
+    "tags": [
+      "Progression fantasy",
+      "Western writer",
+      "Romance",
+      "Book"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Dagashi Kashi",
+    "description": "Sweets.",
+    "current_chapter": "186",
+    "link": "https://mangadex.org/title/d0c88e3b-ea64-4e07-9841-c1d2ac982f4a/dagashi-kashi",
+    "status": "reading",
+    "tags": [
+      "Slice of life",
+      "Comedy",
+      "Manga"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Is It Wrong to Try to Pick Up Girls in a Dungeon - Danmachi",
+    "description": "He ain't picking up shit. Well, maybe one or two...\nTo ma tyle kurwa spin-off'ów.",
+    "current_chapter": "Vol 19",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1425.180",
+    "status": "reading",
+    "tags": [
+      "Fantasy",
+      "Romance",
+      "Harem?",
+      "LN"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Deadman Wonderland",
+    "description": "O dziwo krótkie.",
+    "current_chapter": "Chapter 57",
+    "link": "https://mangadex.org/title/b96e5e23-0017-4e89-a582-ddaa261bd21d/",
+    "status": "finished",
+    "tags": [
+      "Modern",
+      "Dark",
+      "Supernatural",
+      "Manga"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Do You Think You Can Run After Reincarnating, Nii-san?",
+    "description": "Początek oczywiście interesujący potem fall off.\nCzytałem tylko mangę, ale ma też LN.",
+    "current_chapter": "Manga: Chap 20",
+    "link": "https://mangadex.org/title/36966895-9fa5-4225-8fce-21708df87ea2/tensei-gotoki-de-nigerareru-to-demo-niisan",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "LN",
+      "Fantasy",
+      "Isekai",
+      "Yandere"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "The Eminence in Shadow",
+    "description": "I am atomic. Ale i tak gówniane.",
+    "current_chapter": "Vol 2",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=8532.0",
+    "status": "bored",
+    "tags": [
+      "Isekai",
+      "Comedy",
+      "Fantasy",
+      "LN"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Failure Frame: I Became the Strongest and Annihilated Everything With Low-Level Spells",
+    "description": "Zupełnie nie pamiętam co i jak ale wiem że było ok. Będę czytał od początku chyba.",
+    "current_chapter": "Vol 9",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=8652.0",
+    "status": "reading",
+    "tags": [
+      "Isekai",
+      "Fantasy",
+      "Romance",
+      "Revenge",
+      "LN"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "For my daughter, I'd even defeat a demon lord",
+    "description": "MC został gaslighted do ożenienia się z adoptowaną córką. Głupie.",
+    "current_chapter": "Vol 7?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=3263.45",
+    "status": "bored",
+    "tags": [
+      "Romance",
+      "Fantasy",
+      "Slice of life",
+      "LN"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Fukushuu o Koinegau Saikyou Yuusha wa, Yami no Chikara de Senmetsu Musou Suru",
+    "description": "Wygląda jak typowe 'MC chce się zemścić' ale cholera, on jest na serio. Czytałem tylko mangę ale ma też LN.",
+    "current_chapter": "Chap ~90?",
+    "link": "https://mangadex.org/title/bd38c075-8b12-450a-aeee-125e3ac5da4b/fukushuu-o-koinegau-saikyou-yuusha-wa-yami-no-chikara-de-senmetsu-musou-suru",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "Revenge",
+      "Fantasy",
+      "Dark"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "The Genius Prince's Guide to Raising a Nation Out of Debt (Hey, How About Treason?)",
+    "description": "Chyba hiatus.",
+    "current_chapter": "Vol 11",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=7021.0",
+    "status": "reading",
+    "tags": [
+      "Medival",
+      "Smart MC",
+      "LN",
+      "Kingdom"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Goblin Slayer",
+    "description": "Zabija gobliny.",
+    "current_chapter": "Vol 4",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=3089.105",
+    "status": "bored",
+    "tags": [
+      "Fantasy",
+      "Medival",
+      "LN"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "A Story About A Grandpa and Grandma who Returned Back to their Youth",
+    "description": "Ty co na okładce.",
+    "current_chapter": "Chap 94",
+    "link": "https://mangadex.org/title/10fab94e-2227-47e2-b059-f4762eb5ca4e/jiisan-baasan-wakagaeru",
+    "status": "reading",
+    "tags": [
+      "Romance",
+      "Manga",
+      "Modern",
+      "Slice of life"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "The Greatest Estate Developer",
+    "description": "TYLKO po polsku czytaj.",
+    "current_chapter": "Chap 107",
+    "link": "https://mangadex.org/title/d7f56ace-cd30-48b9-8b64-afeca0077fca/the-greatest-",
+    "status": "reading",
+    "tags": [
+      "Isekai",
+      "Fantasy",
+      "Comedy",
+      "Manhwa"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Hai to Gensou no Grimgar",
+    "description": "Kurwa, takie dobre to było.",
+    "current_chapter": "Vol 17",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1616.75",
+    "status": "reading",
+    "tags": [
+      "Isekai",
+      "Fantasy",
+      "LN",
+      "Good"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Hakai no Miko",
+    "description": "Dobre, ale tak wolnoooo wychodzi.",
+    "current_chapter": "Chap 3 Story 41",
+    "link": "https://infinitenoveltranslations.net/hakai-no-miko/",
+    "status": "reading",
+    "tags": [
+      "Isekai",
+      "kingdom",
+      "WN"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Heavenly Delusion",
+    "description": "Interesujące. Nie wiem kiedy skończyłem, ale gdzieś walczyli z jakimś potworem i dołączyli się do jakieś większej grupy militarnej?",
+    "current_chapter": "?",
+    "link": "https://mangadex.org/title/eeb2ab0e-7dbc-4f0c-b476-8181d44217a8/heavenly-delusion",
+    "status": "reading",
+    "tags": [
+      "Sci-fi",
+      "Apocalypse",
+      "Romance",
+      "Manga"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Helck",
+    "description": "Po komedii nagle pojawia się interesujący poważny plot. Dziwne że to działa",
+    "current_chapter": "106",
+    "link": "https://mangadex.org/title/10a4985d-0713-462e-a9d6-767bf91e4fd7/helck",
+    "status": "finished",
+    "tags": [
+      "Fantasy",
+      "Comedy",
+      "Dark",
+      "Manga"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Her Majesty's Swarm",
+    "description": "To było naprawdę rozczarowujące. \"Zły\" MC, która pomimo faktu że dowodzi kurwa zergami to i tak jakimś cudem pomaga dla ludzi. Beznadziejne.",
+    "current_chapter": "Vol 4",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=8010.0",
+    "status": "bored",
+    "tags": [
+      "Isekai",
+      "\"Evil\" MC",
+      "Cancelled",
+      "LN",
+      "Kingdom"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Horimiya",
+    "description": "Manga skończona, ale jest chyba cała oddzielna kontynuacja, gdzie skupia się na innych postaciach. Trochę kurna szkoda że oryginalna manga i tak to robiła. To minus tego.",
+    "current_chapter": "122",
+    "link": "https://mangadex.org/title/a25e46ec-30f7-4db6-89df-cacbc1d9a900",
+    "status": "finished",
+    "tags": [
+      "Romance",
+      "School life",
+      "Comedy",
+      "Manga"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "How a Realist Hero Rebuilt the Kingdom",
+    "description": "No coś tam zbudował.",
+    "current_chapter": "Vol 13?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=2908.0",
+    "status": "bored",
+    "tags": [
+      "LN",
+      "Harem",
+      "Fantasy",
+      "Isekai",
+      "Kingdom"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "I Became an Evolving Space Monster",
+    "description": "No ewoluuje.",
+    "current_chapter": "Chap 57",
+    "link": "https://novelbin.me/novel-book/i-became-an-evolving-space-monster",
+    "status": "bored",
+    "tags": [
+      "WN",
+      "Isekai",
+      "Dark",
+      "Sci-fi",
+      "Chinese"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too",
+    "description": "No slop, co powiedzieć.",
+    "current_chapter": "Vol 1?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=8445.0",
+    "status": "bored",
+    "tags": [
+      "LN",
+      "Isekai",
+      "Fantasy",
+      "Harem"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "So I'm a Spider, So What?",
+    "description": "No i jest tym pająkiem.",
+    "current_chapter": "Vol 16",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=3377.0",
+    "status": "finished",
+    "tags": [
+      "LN",
+      "Isekai",
+      "Fantasy",
+      "Najlepsze"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Imaizumi Brings All the Gals to His House",
+    "description": "To jest naprawdę dobre.",
+    "current_chapter": "Chap 41?",
+    "link": "https://mangadex.org/title/2674b676-f69b-4fea-b5eb-d19803d41fce/imaizumin-chi-wa-douyara-gal-no-tamariba-ni-natteru-rashii-deep",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "18+",
+      "Harem",
+      "Romance",
+      "Slice of life",
+      "Comedy"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "In Another World With My Smartphone",
+    "description": "Ma smartphone -> zostaje bogiem.",
+    "current_chapter": "Vol 21?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=6584.0",
+    "status": "bored",
+    "tags": [
+      "LN",
+      "Harem",
+      "Isekai",
+      "Fantasy"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Infinite Dendrogram",
+    "description": "SAO ale lepsze.",
+    "current_chapter": "Vol 22?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=3205.45",
+    "status": "reading",
+    "tags": [
+      "LN",
+      "Isekai",
+      "Modern",
+      "Fantasy",
+      "Sci-fi",
+      "VR"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "My Instant Death Ability is So Overpowered, No One in This Other World Stan",
+    "description": "Ludzie mówią ze złe, ale KURWA ZAJEBISTE.",
+    "current_chapter": "Vol 14",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=8577.0",
+    "status": "reading",
+    "tags": [
+      "LN",
+      "Fantasy",
+      "Isekai",
+      "Comedy"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Isaac",
+    "description": "Edgy, mądry MC.",
+    "current_chapter": "Vol 7?",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=6857.0",
+    "status": "reading",
+    "tags": [
+      "WN",
+      "Korean",
+      "Dark",
+      "Isekai"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Isekai Apocalypse Mynoghra",
+    "description": "O dziwo dobre.",
+    "current_chapter": "Vol 7",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=8573.0",
+    "status": "reading",
+    "tags": [
+      "LN",
+      "Isekai",
+      "Fantasy",
+      "Kingdom",
+      "Good"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "My Senpai is Annoying",
+    "description": "Fanart mnie zainteresował. Autor mnie oszukał. Są niby bonusowe ale nikt ich nie tłumaczy? Jestem na bonus 2 ale są wcześniejsze chyba.",
+    "current_chapter": "Chap 238 - Bonus 2",
+    "link": "https://mangadex.org/title/af38f328-8df1-4b4c-a272-e737625c3ddc/senpai-ga-uzai-kouhai-no-hanashi",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "Slice of life",
+      "Modern",
+      "Romance"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Make the Exorcist Fall in Love",
+    "description": "Taki shounen ale dla dorosłych i guess. Raczej nie seinen.",
+    "current_chapter": "Chap 112",
+    "link": "https://weebcentral.com/series/01J76XYFH535Y7K96RD40PQ467/Make-the-Exorcist-Fall-in-Love",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "Fantasy",
+      "Modern",
+      "Romance"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Isekai Meikyuu de Harem wo",
+    "description": "MC jest interesujący w dziwnym sensie.\nManga: https://mangadex.org/title/1389d660-b9b1-4c6a-81af-eab4dbf3f22b ",
+    "current_chapter": "LN: Vol 10? Manga: Chap 80??",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=8654.0",
+    "status": "reading",
+    "tags": [
+      "LN",
+      "Manga",
+      "Harem",
+      "18+",
+      "Fantasy",
+      "Isekai",
+      "Medival"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Isekai Tensei Soudouki",
+    "description": "MC *lubi* pieniądze. Jest chyba na hiatusie.",
+    "current_chapter": "Vol 14",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=8404.0",
+    "status": "reading",
+    "tags": [
+      "LN",
+      "Harem",
+      "Isekai",
+      "Fantasy",
+      "Medival"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Jagaaaaaan",
+    "description": "To było dziwne.",
+    "current_chapter": "Chap 163",
+    "link": "https://mangadex.org/title/bb3cfc51-d0f8-483d-95fd-fd08f7ddf269/jagaaaaaan",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "Modern",
+      "Supernatural",
+      "Dark",
+      "Weird"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Fight Class 3",
+    "description": "MC nagle odpierdala około 70 chaptera. Dobre.",
+    "current_chapter": "Chap 109",
+    "link": "mangadex.org/title/21647/fight-class-3",
+    "status": "reading",
+    "tags": [
+      "Manhwa",
+      "Modern",
+      "Sport"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Reversed Standards of Beauty Isekai: I’m Pursued by S-Rank Female Adventurers Who Are past the Age of Marriageability",
+    "description": "Tytuł. Slop ale przyjemny.",
+    "current_chapter": "Chap 27",
+    "link": "https://mangadex.org/title/6baff350-8054-4e5d-84dc-7e8c50764061/gyakuten-isekai-de-yomeki-okure-s-rank-onna-boukensha-tachi-ni-semarareteimasu",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "18+",
+      "Harem",
+      "Fantasy",
+      "Medival"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Jichou shinai Moto Yuusha no Tsuyokute Tanoshii New Game",
+    "description": "Nie pamiętam tbh.",
+    "current_chapter": "Chap 122?",
+    "link": "https://mangadex.org/title/9240108e-7d55-4004-9577-db7adc599621/jichou-shinai-moto-yuusha-no-tsuyokute-tanoshii-new-game",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "18+",
+      "Harem",
+      "Comedy",
+      "Fantasy",
+      "Medival"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "JK Haru Is a Sex Worker in Another World",
+    "description": "Nieironicznie interesująca novelka. MC jest interesująca, a świat jest na pewno inny niż w typowych isekaiach, taki bardziej rzeczywisty. Chyba wychodzą nowe części?",
+    "current_chapter": "Vol 2",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=6675.15",
+    "status": "reading",
+    "tags": [
+      "LN",
+      "18+",
+      "Isekai",
+      "Slice of life",
+      "Dark",
+      "Medival"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Kaiji",
+    "description": "Manga o hazardziście. skończyłem 1 część, teraz jestem na drugiej \"Tobaku Hakairoku Kaiji\".",
+    "current_chapter": "Part 2 Chap 2",
+    "link": "mangadex.org/title/5071/tobaku-hakairoku-kaiji",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "Modern",
+      "Sport",
+      "Drama"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Kingdom",
+    "description": "Machają tymi włóczniami jakby były gumowe.",
+    "current_chapter": "Chap 837",
+    "link": "https://mangadex.org/title/077a3fed-1634-424f-be7a-9a96b7f07b78",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "Medival",
+      "Historical",
+      "Kingdom"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Kino no Tabi",
+    "description": "Crook Mofus była bazowana na MC.",
+    "current_chapter": "Vol 1",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1761.0",
+    "status": "bored",
+    "tags": [
+      "LN",
+      "Philosophical",
+      "Travelling"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Koe no Katachi",
+    "description": "Grubas sra, no nie mogę!",
+    "current_chapter": "Chap 62",
+    "link": "https://mangadex.org/title/4bde51e5-e420-45a4-98e9-7405bf2d59ff/koe-no-katachi",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "Slice of life",
+      "Romance",
+      "Drama"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Land of the Lustrous",
+    "description": "No, pojebane co zrobili dla MC. Ale o to chodzi.",
+    "current_chapter": "Chap 108",
+    "link": "https://mangadex.org/title/cade38b7-64c4-4a29-8e3c-8c283291d6c6/houseki-no-kuni",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "Sci-fi",
+      "Philosophical"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Lord of the Mysteries",
+    "description": "RI mnie zaintrygowało, a dopiero to wciągneło w ProgFantasy.",
+    "current_chapter": "LotM - Chap 1432 CoI - 1181",
+    "link": "https://novelbin.me/novel-book/lord-of-the-mysteries",
+    "status": "finished",
+    "tags": [
+      "WN",
+      "Chinese",
+      "Progression fantasy",
+      "Najlepsze",
+      "Fantasy",
+      "Isekai",
+      "Steampunk"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Mahou Shoujo of the End",
+    "description": "I guess zombie apokalipsa ale magiczne dziewczynki. Chyba skończyłem?",
+    "current_chapter": "Chap 63",
+    "link": "https://mangadex.org/title/149cf48f-1e07-4df8-97f9-5acd61211709/magical-girl-apocalypse",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "Dark",
+      "Magical girls",
+      "18+",
+      "Apocalypse"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Mapping: The Trash-Tier Skill That Got Me Into a Top-Tier Party",
+    "description": "Wydawało się kurwa dobre bo był romans od tomu 2, ale zostało axed. Więc smutno trochę. Nie pamiętam czy jednak ten romans to i tak był bait, bo chyba potem i tak nic nie robią.",
+    "current_chapter": "Vol 3",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=8569.0",
+    "status": "bored",
+    "tags": [
+      "LN",
+      "Fantasy",
+      "Medival",
+      "Romance",
+      "Cancelled"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Mato Seihei no Slave",
+    "description": "Jak lubisz femdom, to jest to manga dla ciebie. Nie pamiętam gdzie skończyłem.",
+    "current_chapter": "Chap ??",
+    "link": "https://mangadex.org/title/e1e38166-20e4-4468-9370-187f985c550e",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "18+",
+      "Harem",
+      "Fantasy",
+      "Modern"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Max Level Player",
+    "description": "Max Level Player/The Maxed-Out Player. Slop, co tu gadać.",
+    "current_chapter": "Chap 124",
+    "link": "https://utoon.net/manga/the-maxed-out-player/",
+    "status": "reading",
+    "tags": [
+      "Manhwa",
+      "Fantasy",
+      "VR",
+      "Isekai",
+      "Modern"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Maybe Meant to Be",
+    "description": "Kurwa, dobry romans bez jebania się. Pierwszy chapter i się żenią. Tak kurna powinno być.",
+    "current_chapter": "Chap 132",
+    "link": "https://mangadex.org/title/220282a9-a2ff-4a6b-9bed-f4a9da24c661/match-made-in-heaven-by-chance",
+    "status": "finished",
+    "tags": [
+      "Manhwa",
+      "Actual Romance",
+      "Slice of life",
+      "Something More"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "The Second Coming of Gluttony",
+    "description": "Lepsze niż się spodziewałem.",
+    "current_chapter": "Chap 489 SS 60",
+    "link": "https://novelbin.com/b/the-second-coming-of-gluttony-novel/",
+    "status": "finished",
+    "tags": [
+      "WN",
+      "Korean",
+      "Isekai",
+      "Fantasy",
+      "Progression fantasy"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Mizuki-senpai’s Love Fortune-Telling",
+    "description": "Na początku wydaje się normalne a potem jest trochę schiza.",
+    "current_chapter": "Chap 54",
+    "link": "https://mangadex.org/title/ee845b1a-b1cd-4fb3-ade2-0030890f7c2a/mizuki-senpai-s-love-fortune-telling",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "Romance",
+      "Weird",
+      "Slice of life",
+      "School life",
+      "Supernatural",
+      "Comedy"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Monster Tamer",
+    "description": "Chłop jebie zwierzęta. Ja nie mogę. Niby kurwa na hiatusie. Ehhh...",
+    "current_chapter": "Vol 9",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1680.0",
+    "status": "reading",
+    "tags": [
+      "LN",
+      "Harem",
+      "Fantasy",
+      "Isekai",
+      "Medival"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "A Divorced Crybaby Has Moved in Next Door",
+    "description": "Zyugoya, czyli całkiem spoko. Czasami ma jeszcze dodawane jedno-panelowce.",
+    "current_chapter": "Chap 29.6",
+    "link": "https://mangadex.org/title/a892e04c-e20c-4fd3-9169-d620cee8dbd4/my-divorced-crybaby-neighbour",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "Romance",
+      "18+",
+      "Modern",
+      "Slice of life"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "My Yandere Girlfriend Lurks in the Dungeon and Kills Me Over and Over Again",
+    "description": "Tytuł mnie zaciekawił. Na pewno inspirowane Re;zero. CHyba koło Chap 30 skończyłem",
+    "current_chapter": "Chap 30?",
+    "link": "https://mangadex.org/title/ea0e7020-2b2f-4f17-9251-fee3632dc135",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "Fantasy",
+      "Dark",
+      "Harem?",
+      "Medival"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Love After World Domination",
+    "description": "Ok manga, szkoda ze została axed. Nagle para objawia że są razem i jest happy end. Nie obchodzi mnie ta manga aż tak, ale szkoda.",
+    "current_chapter": "Chap 38",
+    "link": "https://mangadex.org/title/cb4b4030-dc06-42a0-9830-1b7ddaff88c1/koi-wa-sekai-seifuku-no-ato-de",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "Romance",
+      "Slice of life",
+      "Evil Organization",
+      "Comedy",
+      "Modern"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Twin Star Exorcists",
+    "description": "Shounen, ale taki bardziej jak seinen. Mocny nacisk na relacje rodzice-dzieci. Nie jest idealny, ale ma więcej do powiedzenia niż typowy shounen.",
+    "current_chapter": "Chap 134",
+    "link": "https://mangadex.org/title/fcf1aa35-4891-46a3-9874-f1823ddac415?tab=chapters",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "Romance",
+      "Fantasy",
+      "Something More",
+      "Modern"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "NTRevenge",
+    "description": "Ten sam autor co 'Confinement King'. Ma 3 takie same mangi. Uwielbiam tego autora.",
+    "current_chapter": "Chap 66",
+    "link": "mangadex.org/title/87af3e63-3b01-4e62-9d1b-811987c8029a/ntrevenge",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "18+",
+      "Harem",
+      "Revenge",
+      "Modern",
+      "Supernatural"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Aishiteru Game o Owarasetai",
+    "description": "Polecone. Niby podobne do Kaguya-sama, i też koło chaptera 50 zaczynają ze sobą chodzić. jak będzie więcej chapterów to przeczytam pewnie.",
+    "current_chapter": "Chap 1",
+    "link": "https://mangadex.org/title/acdbf57f-bf54-41b4-8d92-b3f3d14c852e/aishiteru-game-o-owarasetai",
+    "status": "to_read",
+    "tags": [
+      "Manga",
+      "Romance",
+      "Slice of life",
+      "Modern",
+      "Comedy"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Replica datte, Koi wo Suru.",
+    "description": "Polecone. Wydaje się całkiem dobre, ale manga ma tylko 20~ chapterów, a LN na meido ma dosłownie tylko 1 post z Vol 1. Aizen, come on.",
+    "current_chapter": "LN: Vol 1 Manga: Chap 1",
+    "link": "https://mangadex.org/title/5ecf58d2-fcac-44f1-8341-97b7ef4fe82e/replica-datte-koi-wo-suru",
+    "status": "to_read",
+    "tags": [
+      "LN",
+      "Manga",
+      "Romance",
+      "Slice of life"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Nana to Kaoru",
+    "description": "SM manga ale nie tak 18+? Ma kilka mang tak samo jak Kaiji.",
+    "current_chapter": "N&K BL?",
+    "link": "https://mangadex.org/title/fa8beb17-13df-492b-b134-9c651aa01cfa?tab=related",
+    "status": "bored",
+    "tags": [
+      "Manga",
+      "18+",
+      "Romance",
+      "Modern"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "I was Reincarnated as the Scumbag from a Netorare Manga, But the Heroine is Coming on to Me",
+    "description": "Tytuł.",
+    "current_chapter": "Chap 8?",
+    "link": "https://mangadex.org/title/6f83b8fb-ca25-47c5-9d16-759dacff0a6b/netorare-manga-no-kuzu-otoko-ni-tensei-shita-hazu-ga-heroine-ga-yottekuru-ken",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "18+",
+      "Romance",
+      "Modern"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "No Game No Life",
+    "description": "Klasyk. Aktualnie dalej czekam na tom 13, który miał być jakieś 2 lata temu już, o ile nie 3.",
+    "current_chapter": "Vol 12",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1335.105",
+    "status": "reading",
+    "tags": [
+      "LN",
+      "Good",
+      "Isekai",
+      "Smart MC"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "“Okaeri, Papa”",
+    "description": "To chyba jakieś fucked up, gdzie matka i córka manipulują gościa aby przespał się z córką. Czyli realistyczne doujinshi.",
+    "current_chapter": "-",
+    "link": "https://mangadex.org/title/3d6ccd3e-f430-4eed-b0bc-59f91803b83f/-okaeri-papa",
+    "status": "to_read",
+    "tags": [
+      "Manga",
+      "Dark",
+      "Modern"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Omniscient Reader's Viewpoint",
+    "description": "Dobre, dopóki nie zaczynają spamić tym że 'o nie on przeczytał książkę i teraz wie rzeczy o nas ojojoj'. Gówno.",
+    "current_chapter": "Chap 486",
+    "link": "https://novelbin.com/b/omniscient-readers-viewpoint-14569111",
+    "status": "bored",
+    "tags": [
+      "WN",
+      "Fantasy",
+      "Progression fantasy",
+      "Korean"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Betrayed by the Hero, I Formed a MILF Party with His Mom!",
+    "description": "Lepsze niż się spodziewałem. Czytałem mangę, ale ma też LN. Link do LN - https://kaoritranslation.blogspot.com/p/yuusha-ni-zenbu-ubawareta-ore-wa-yuusha.html?m=1",
+    "current_chapter": "Manga: Chap 35",
+    "link": "https://mangadex.org/title/9e107c4a-ad46-4fcf-9ca1-98f21c6ec2a3/yuusha-ni-zenbu-ubawareta-ore-wa-yuusha-no-hahaoya-to-party-wo-kumimashita",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "LN",
+      "Isekai",
+      "Fantasy",
+      "Medival",
+      "18+",
+      "Harem"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "The Strongest Harem of Nobles",
+    "description": "Slop.",
+    "current_chapter": "Chap 57",
+    "link": "https://mangadex.org/title/b4d247b6-50bb-44a1-8723-ebc0ee27a0c5/isekai-saikou-no-kizoku-harem-wo-fuyasu-hodo-tsuyoku-naru",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "18+",
+      "Harem",
+      "Fantasy",
+      "Isekai",
+      "Medival"
+    ]
+  },
+  {
+    "id": 88,
+    "name": "SSS-Class Suicide Hunter",
+    "description": "Reddit mówi 'omg 10/10' ale to koreański slop. Zobaczę jak manhwa się ma.",
+    "current_chapter": "WN - Chap 38",
+    "link": "https://novelbin.com/b/sssclass-suicide-hunter/",
+    "status": "reading",
+    "tags": [
+      "Manhwa",
+      "Korean",
+      "Returner",
+      "WN",
+      "Fantasy",
+      "Progression fantasy",
+      "Modern"
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Chronicles of an Aristocrat Reborn in Another World: The Apostle of the Gods Who Know No Self-Restraint",
+    "description": "Idk, zaczynam czytać.",
+    "current_chapter": "-",
+    "link": "https://mangadex.org/title/39b4e02a-f2f2-4ff0-bf2c-f87cf54ab178/tensei-kizoku-no-isekai-boukenroku-jichou-wo-shiranai-kamigami-no-shito",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "Harem",
+      "Isekai",
+      "Fantasy",
+      "Medival"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Ore no Imouto ga Konnani Kawaii Wake ga Nai",
+    "description": "Jakoś nie mogłem się tym zainteresować",
+    "current_chapter": "Vol 1",
+    "link": "http://www.vn-meido.com/k1/index.php?topic=1596.0",
+    "status": "bored",
+    "tags": [
+      "LN",
+      "Romance",
+      "Modern"
+    ]
+  },
+  {
+    "id": 91,
+    "name": "I Was Caught up in a Hero Summoning, but That World Is at Peace",
+    "description": "Isekai jakiś idk. Shallow Vernal jest tam.",
+    "current_chapter": "Chap 0",
+    "link": "https://www.foxaholic.com/novel/yuushou-ln/",
+    "status": "to_read",
+    "tags": [
+      "LN",
+      "Isekai",
+      "Harem",
+      "Fantasy",
+      "Medival"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Would Abandoning My Childhood Friend Who Has Become a School Idol and Becoming Happy Be Allowed?",
+    "description": "Autor toくろねこどらごん. Kurwa mać to jest mój osobisty crack. ma ponad 100 historii. Większość z nich to chyba one-shot'y, ale DAMN. Ta historia jest o gościu co jest zdecydowanie pizdą, ale w tym rzecz. FMC to pojebana yandere co i tak go nie zostawi.",
+    "current_chapter": "Chap 84",
+    "link": "https://kakuyomu.jp/works/16816452221139248312",
+    "status": "reading",
+    "tags": [
+      "WN",
+      "Modern",
+      "Drama",
+      "Despair-Romance",
+      "School life"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Oshi no Ko",
+    "description": "Autor Kaguyi. ",
+    "current_chapter": "Chap 166.5 ",
+    "link": "https://mangadex.org/title/296cbc31-af1a-4b5b-a34b-fee2b4cad542/-oshi-no-ko?page=2",
+    "status": "finished",
+    "tags": [
+      "Manga",
+      "Dark",
+      "Drama",
+      "Modern",
+      "Revenge"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Parallel Paradise",
+    "description": "Autor Elfen Lied. Ta manga to coś.",
+    "current_chapter": "Chap 250?",
+    "link": "https://mangadex.org/title/64ed4d14-9e00-4b63-8799-547a508f5344/parallel-paradise",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "18+",
+      "Isekai",
+      "Dark",
+      "Harem?",
+      "Fantasy",
+      "Sci-fi"
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Ragna Crimson",
+    "description": "ZAJEBISTY POCZĄTEK. MC jest słaby ale chcę chronić waifu i nagle jest OP. Ale zamiast podróżować razem to się rozstają bo MC coś pierdoli że jest za słaba. No i chuj to strzelił. Jest potem w sumie ok przez pewien czas, ale potem dołączają do innych pizd i to po prostu jest TAKIE. POWOLNE.",
+    "current_chapter": "Chap 80~?",
+    "link": "https://mangadex.org/title/f2e91f99-6c3b-4a66-a3f7-9da13f68c416/ragna-crimson",
+    "status": "reading",
+    "tags": [
+      "Manga",
+      "Fantasy"
+    ]
+  }
+]

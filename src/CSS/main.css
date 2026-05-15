@@ -81,9 +81,23 @@ body {
 }
 
 .mla-modal-big {
-  max-width: 700px;
-  width: 90%;
+  max-width: 900px;
 }
+
+.mla-modal-content {
+  display: grid;
+  grid-template-columns: 200px 650px;
+  gap: 20px;
+}
+
+.mla-image-box {
+  width: 200px;
+  height: 276px;
+  border: 3px solid #A96ADE;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 
 .mla-description {
   background-color: #1a1a1a;
@@ -92,6 +106,19 @@ body {
   white-space: pre-wrap;
   color: #F0F3FF;
   line-height: 1.5;
+}
+
+.mla-image-upload-box {
+  width: 200px;
+  height: 276px;
+  border: 3px dashed #A96ADE;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.mla-image-upload-box:hover {
+  border-color: #612963ab;
 }
 
 .mla-description-edit {
