@@ -3,6 +3,11 @@ import cors from "cors";
 import fs from "fs";
 import path from "path";
 import multer from "multer";
+import passport from "passport";
+import { Strategy as LocalStrategy } from "passport-local";
+import { Strategy as JwtStrategy, ExtractJwt } from "passport-jwt";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import { fileURLToPath } from "url";
 import { getFormDefaultValueType } from "./extra.js"
 import sharp from "sharp";
@@ -10,6 +15,68 @@ import sharp from "sharp";
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(passport.initialize());
+
+passport.use(
+  new LocalStrategy(
+    async function(username, password, done) {
+      try {
+        const user = findUser(username);
+
+        if (!user) { 
+          return done(null, false); 
+        }
+
+        const goodPassword = await bcrypt.compare(password, user.password);
+        if (!goodPassword) { 
+          return done(null, false); 
+        }
+        return done(null, user);
+      } catch(err) {
+        done(err);
+      }
+    }
+  )
+);
+
+passport.serializeUser((user, done) => {
+  done(null, user.username);
+});
+
+passport.deserializeUser((username, done) => {
+  try {
+    const user = findUser(username);
+
+    if (!user) {
+      return done(null, false);
+    }
+
+    done(null, user);
+  } catch (err) {
+    done(err);
+  }
+});
+
+const opts = {
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+  secretOrKey: "SECRET"
+};
+
+passport.use(
+  new JwtStrategy(opts, (payload, done) => {
+    try {
+      const user = findUser(payload.username);
+
+      if (!user) {
+        return done(null, false);
+      }
+
+      return done(null, user);
+    } catch (err) {
+      done(err);
+    }
+  })
+);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,6 +84,7 @@ const dbPath = path.join(__dirname, "list_data.json");
 const tagsPath = path.join(__dirname, "tags.json");
 const imagesPath = path.join(__dirname, "images/");
 const imageExtensions = ["jpg", "jpeg", "png"];
+const usersPath = path.join(__dirname, "users.json");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -36,7 +104,7 @@ const storage = multer.diskStorage({
 
     cb(null, `${name}${ext}`);
   }
-})
+});
 
 const uploadImage = multer({ 
   storage: storage,
@@ -278,5 +346,78 @@ app.post("/tags/addTag", (req, res) => {
     res.status(500).json({ error: "Failed to add tag" });
   }
 });
+
+//API for user managment
+
+const getUsers = () =>  {
+  const file = fs.readFileSync(usersPath, "utf-8");
+
+  if (!file.trim()) {
+    return JSON.parse([]);
+  }
+
+  return JSON.parse(file);
+};
+
+const findUser = (username) => {
+  return getUsers().find(u => u.username === username);
+};
+
+app.post("/users/login", passport.authenticate("local", { session: false }), (req, res) => {
+  try {
+    const token = jwt.sign(
+      {
+        id: req.user.id,
+        username: req.user.username
+      },
+      "SECRET",
+      { expiresIn: "1h" }
+    );
+
+    res.status(200).json({ message: "Login successful.", token });
+  } catch(err) {
+    console.log(err)
+    res.status(500).json({ error: "Failed login." });
+  }
+});
+
+app.post("/users/register", (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const data = getUsers();
+
+    if (data.length === 0) {
+      return res.json([]);
+    }
+
+    const exists = data.some(user => user.username === username);
+    if(exists){
+      return res.status(409).json({ message: "User already exists." });
+    }
+
+    const hashedPassword = bcrypt.hashSync(password, 12);
+
+    const maxId = data.length > 0 ? Math.max(...data.map(user => user.id)) : 0;
+    
+    const newUser = {
+      id: maxId + 1,
+      username: username,
+      password: hashedPassword
+    };
+
+    data.push(newUser);
+    fs.writeFileSync(usersPath, JSON.stringify(data, null, 2));
+
+    res.status(201).json({message: "User registered."});
+  } catch(err) {
+    console.log(err)
+    res.status(500).json({ error: "Failed login." });
+  }
+});
+
+app.get("/users/me", passport.authenticate("jwt", { session: false }), (req, res) => {
+    res.json(req.user);
+  }
+);
 
 app.listen(4000, () => console.log("Backend running on port 4000"));

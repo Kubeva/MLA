@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Form, Button, Table } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import '../CSS/DatabaseEditor.css';
 
 function DatabaseEditor() {
@@ -11,6 +12,7 @@ function DatabaseEditor() {
   const [formAddError, setFormAddError] = useState("");
   const [formDeleteError, setFormDeleteError] = useState("");
 
+  const navigate = useNavigate();
   const databaseAttributes = database.length > 0 ? Object.keys(database[0]) : [];
 
   const addNewAttribute = async (e) => {
@@ -116,8 +118,34 @@ function DatabaseEditor() {
   }
 
   useEffect(() => {
+    const checkAuth = async () => {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        console.log("No token!");
+        navigate("/login");
+        return;
+      };
+
+      try {
+        const res = await fetch("http://localhost:4000/users/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (!res.ok) {
+          localStorage.removeItem("token");
+          navigate("/login");
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    };
+
+    checkAuth();
     fetchDatabase();
-  }, []);
+  }, [navigate]);
 
   return (
     <>

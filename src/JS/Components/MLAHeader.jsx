@@ -11,7 +11,8 @@ function MLAHeader() {
       <Navbar.Collapse>
         <Nav>
           <Nav.Link className="mla-nav-link" as={Link} to="/">List</Nav.Link>
-          <Nav.Link className="mla-nav-link" as={Link} to="DBEditor">Database Editor</Nav.Link>
+          <Nav.Link className="mla-nav-link" as={Link} to="/DBEditor">Database Editor</Nav.Link>
+          <Nav.Link className="mla-nav-link" as={Link} to="/login">Login</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>

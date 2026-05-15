@@ -176,21 +176,29 @@ body {
   margin-right: -16px;
 }
 
+.mla-user-box {
+  width: 350px;
+  margin: 40px auto 0px auto; 
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .attribute-input {
-  background-color: #836ADE;
-  color: #F0F3FF;
+  display: flex;
+  justify-content: center;
 }
 
 .attribute-input:focus {
-    background-color: #836ADE;
-    color: #F0F3FF;
-    border-color: #86C7FF;
+  background-color: #836ADE;
+  color: #F0F3FF;
+  border-color: #86C7FF;
 }
 
 .attribute-input::placeholder {
-    color: #F0F3FF;
+  color: #F0F3FF;
 }
 
 .spinner-color {
-    color: #836ADE;
+  color: #836ADE;
 }
