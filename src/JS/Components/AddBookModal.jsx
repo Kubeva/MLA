@@ -25,7 +25,7 @@ function AddBookModal({ show, onClose, attributes, getType, fetchDatabase }) {
     if (!validateNewItem(newItem)) return;
 
     try {
-      const res = await fetch("http://localhost:4000/database/addItem", {
+      const res = await fetch("https://localhost/database/addItem/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

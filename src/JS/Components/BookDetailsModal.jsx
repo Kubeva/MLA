@@ -38,7 +38,7 @@ function BookDetailsModal({ show, onClose, selectedBook, setSelectedBook, getSta
     formData.append("image", imageToUpload);
 
     try {
-      const res = await fetch(`http://localhost:4000/database/uploadImage/${editedItem.id}`, {
+      const res = await fetch(`https://localhost/database/uploadImage/${editedItem.id}/`, {
         method: "POST",
         body: formData
       });
@@ -63,8 +63,8 @@ function BookDetailsModal({ show, onClose, selectedBook, setSelectedBook, getSta
     try {
       uploadImage();
 
-      const res = await fetch("http://localhost:4000/database/editItem", {
-        method: "POST",
+      const res = await fetch("https://localhost/database/editItem/", {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json"
         },
@@ -99,7 +99,7 @@ function BookDetailsModal({ show, onClose, selectedBook, setSelectedBook, getSta
 
   const fetchBookImage = async (id) => {
     try {
-      const res = await fetch(`http://localhost:4000/database/getImageById/${id}`);
+      const res = await fetch(`https://localhost/database/getImageById/${id}/`);
       const data = await res.blob();
 
       setImage(URL.createObjectURL(data));

@@ -72,7 +72,7 @@ function ListPage() {
 
   const fetchDatabase = async () => {
     try {
-      const res = await fetch("http://localhost:4000/database");
+      const res = await fetch("https://localhost/database/");
       const data = await res.json();
       setDatabase(data);
     } catch (err) {

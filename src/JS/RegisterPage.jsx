@@ -15,7 +15,7 @@ function RegisterPage() {
       return;
     }
     try {
-      const res = await fetch("http://localhost:4000/users/register", {
+      const res = await fetch("https://localhost/users/register/", {
       method: "POST",
       headers: {
       "Content-Type": "application/json"
@@ -66,7 +66,7 @@ function RegisterPage() {
       };
 
       try {
-        const res = await fetch("http://localhost:4000/users/me", {
+        const res = await fetch("https://localhost/users/me/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -91,25 +91,25 @@ function RegisterPage() {
           <Form.Group>
             <Form.Label>Username</Form.Label>
             <Form.Control 
-            type="text" 
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+              type="text" 
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Hasło</Form.Label>
             <Form.Control 
-            type="password" 
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+              type="password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Powtórz hasło</Form.Label>
             <Form.Control 
-            type="password" 
-            value={passwordRep}
-            onChange={(e) => setPasswordRep(e.target.value)}
+              type="password" 
+              value={passwordRep}
+              onChange={(e) => setPasswordRep(e.target.value)}
             />
           </Form.Group>
         </Form>

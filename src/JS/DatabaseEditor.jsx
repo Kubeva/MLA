@@ -36,7 +36,7 @@ function DatabaseEditor() {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/database/addAttribute", {
+      const res = await fetch("https://localhost/database/addAttribute/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -76,8 +76,8 @@ function DatabaseEditor() {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/database/deleteAttribute", {
-        method: "POST",
+      const res = await fetch("https://localhost/database/deleteAttribute/", {
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json"
         },
@@ -102,7 +102,7 @@ function DatabaseEditor() {
 
   const fetchDatabase = async () => {
     try {
-      const res = await fetch("http://localhost:4000/database");
+      const res = await fetch("https://localhost/database/");
       const data = await res.json();
       setDatabase(data);
     } catch (err) {
@@ -128,7 +128,7 @@ function DatabaseEditor() {
       };
 
       try {
-        const res = await fetch("http://localhost:4000/users/me", {
+        const res = await fetch("https://localhost/users/me/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

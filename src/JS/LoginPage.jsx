@@ -9,7 +9,7 @@ function LoginPage() {
 
   const loginAttempt = async () => {
     try {
-      const res = await fetch("http://localhost:4000/users/login", {
+      const res = await fetch("https://localhost/users/login/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -43,7 +43,7 @@ function LoginPage() {
       };
 
       try {
-        const res = await fetch("http://localhost:4000/users/me", {
+        const res = await fetch("https://localhost/users/me/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

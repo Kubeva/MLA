@@ -11,6 +11,8 @@ import jwt from "jsonwebtoken";
 import { fileURLToPath } from "url";
 import { getFormDefaultValueType } from "./extra.js"
 import sharp from "sharp";
+import swaggerUi from "swagger-ui-express";
+import swaggerFile from "./swagger.json" with { type: "json" };
 
 const app = express();
 app.use(cors());
@@ -119,6 +121,8 @@ const uploadImage = multer({
   }
 });
 
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
 app.get("/database", (req, res) => {
   try {
     const file = fs.readFileSync(dbPath, "utf-8");
@@ -128,7 +132,7 @@ app.get("/database", (req, res) => {
     }
 
     const data = JSON.parse(file);
-    res.status(201).json(data);
+    res.status(200).json(data);
   } catch (err) {
     console.log(err)
     res.status(500).json({ error: "Failed to read database" });
@@ -162,11 +166,11 @@ app.post("/database/addAttribute", (req, res) => {
     res.status(201).json({ message: "Added attribute." });
   } catch(err) {
     console.log(err)
-    res.status(500).json({ error: "Failed to add attribute to database" });
+    res.status(500).json({ error: "Failed to add attribute to database." });
   }
 });
 
-app.post("/database/deleteAttribute", (req, res) => {
+app.delete("/database/deleteAttribute", (req, res) => {
   try {
     const { name } = req.body;
     const file = fs.readFileSync(dbPath, "utf-8");
@@ -179,7 +183,7 @@ app.post("/database/deleteAttribute", (req, res) => {
 
     const exists = data.some(item => Object.hasOwn(item, name));
     if(!exists){
-      return res.status(409).json({ message: "Attribute doesn't exist." });
+      return res.status(404).json({ message: "Attribute doesn't exist." });
     }
 
     const updatedDatabase = data.map(item => {
@@ -190,7 +194,7 @@ app.post("/database/deleteAttribute", (req, res) => {
 
     fs.writeFileSync(dbPath, JSON.stringify(updatedDatabase, null, 2));
 
-    res.status(201).json({ message: "Deleted attribute." });
+    res.status(200).json({ message: "Deleted attribute." });
   } catch(err) {
     console.log(err)
     res.status(500).json({ error: "Failed to delete attribute from database" });
@@ -219,14 +223,14 @@ app.post("/database/addItem", (req, res) => {
     data.push(newItem);
     fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
 
-    res.json({message: "Item added."});
+    res.status(201).json({message: "Item added."});
   } catch(err) {
     console.log(err)
     res.status(500).json({ error: "Failed to add item to database" });
   }
 })
 
-app.post("/database/editItem", (req, res) => {
+app.put("/database/editItem", (req, res) => {
   try {
     const editedItem = req.body;
     const file = fs.readFileSync(dbPath, "utf-8");
@@ -293,7 +297,7 @@ app.get("/database/getImageById/:id", (req, res) => {
 
 app.post("/database/uploadImage/:id", uploadImage.single("image"), (req, res) => {
   try {
-    return res.json({ message: "Image uploaded."});
+    return res.status(201).json({ message: "Image uploaded."});
   } catch(err) {
     console.log(err)
     res.status(500).json({ error: "Failed to upload image." });

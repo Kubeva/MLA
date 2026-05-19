@@ -9,7 +9,7 @@ function MLATagInput({ value = [], onChange }) {
 
   const fetchTags = async () => {
     try {
-      const res = await fetch("http://localhost:4000/tags");
+      const res = await fetch("https://localhost/tags/");
       const data = await res.json();
       setTags(data);
     } catch (err) {
@@ -28,7 +28,7 @@ function MLATagInput({ value = [], onChange }) {
     try {
       if (!value.includes(tagToAdd)) {
         if (!tags.find(tag => tag.name.toLowerCase() === tagToAdd.toLowerCase())) {
-          const res = await fetch("http://localhost:4000/tags/addTag", {
+          const res = await fetch("https://localhost/tags/addTag/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
