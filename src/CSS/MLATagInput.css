@@ -7,6 +7,9 @@
 
 .mla-tags-search {
   background-color: #836ADE;
+  overflow-y: auto;
+  scrollbar-width: auto;
+  scrollbar-color: #b9a7ff transparent;
 }
 
 .mla-tags-search-item {

@@ -165,7 +165,10 @@ function BookDetailsModal({ show, onClose, selectedBook, setSelectedBook, getSta
               </div>
               <div className="mla-detail">
                 <span className="mla-modal-label">Tags</span>
-                <MLATagInput value={editedItem.tags || []} onChange={handleChange} />
+                <MLATagInput
+                  style={{ width: "300px", marginLeft: "auto" }} 
+                  value={editedItem.tags || []} 
+                  onChange={handleChange} />
               </div>
             </div>
           </div>

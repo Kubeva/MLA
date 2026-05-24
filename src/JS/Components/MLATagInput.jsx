@@ -1,11 +1,41 @@
-import { Form, Badge } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { Form, Badge, Overlay } from "react-bootstrap";
+import { useState, useEffect, useRef, useMemo } from "react";
+import Fuse from "fuse.js";
 import "../../CSS/MLATagInput.css";
 
-function MLATagInput({ value = [], onChange }) {
+function MLATagInput({ style, value = [], onChange }) {
   const [tags, setTags] = useState([]);
   const [input, setInput] = useState("");
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
+  const [focused, setFocused] = useState(false);
+
+  const inputBarRef = useRef(null);
+  const listRef = useRef(null);
+
+  const { searchKey, searchValue } = useMemo(() => {
+    const key = "name";
+    const value = input;
+
+    return { searchKey: key, searchValue: value}
+  }, [input]);
+
+  const fuseObject = useMemo(() => {
+    return new Fuse(tags, {
+      keys: [searchKey],
+      threshold: 0.3,
+      ignoreLocation: true,
+      minMatchCharLength: 1,
+      shouldSort: true
+    });
+  }, [tags, searchKey]);
+
+  const searchTags = searchValue 
+    ? fuseObject.search(searchValue).map(result => result.item)
+    : tags;
+
+  const filteredTags = searchTags
+    .filter(tag =>!value.includes(tag))
+    .filter(tag => tag.id !== 1);
 
   const fetchTags = async () => {
     try {
@@ -18,11 +48,6 @@ function MLATagInput({ value = [], onChange }) {
       console.log("Tried fetching tags");
     }
   };
-
-  const filteredTags = tags.filter(tag =>
-    tag.name.toLowerCase().startsWith(input.toLowerCase()) &&
-    !value.includes(tag)
-  );
 
   const addTag = async (tagToAdd) => {
     try {
@@ -80,6 +105,16 @@ function MLATagInput({ value = [], onChange }) {
     fetchTags();
   }, []);
 
+  useEffect(() => {
+    const elem = listRef.current?.children?.[highlightedIndex];
+    if (elem) {
+      elem.scrollIntoView({
+        block: "nearest",
+        behavior: "smooth"
+      });
+    }
+  }, [highlightedIndex]);
+
   return (
     <div>
       <div className="mb-2">
@@ -87,30 +122,56 @@ function MLATagInput({ value = [], onChange }) {
           <Badge 
           className="mla-badge me-2"
           key={tag}
-          onClick={() => removeTag(tag)}>
+          onMouseDown={() => removeTag(tag)}>
             {tag} ✕
           </Badge>
         ))}
       </div>
       <Form.Control 
+        style={style}
         className="attribute-input" 
         value={input} 
         placeholder="Add tags" 
         onChange={(e) => setInput(e.target.value)} 
-        onKeyDown={handleKeyDown} />
-      {input && filteredTags.length > 0 && (
-        <div className="mla-tags-search border mt-1 p-2">
-          {filteredTags.slice(0, 3).map((tag, index) => (
-            <div 
-            className={`mla-tags-search-item ${index === highlightedIndex ? 'highlight' : ''}`}
-            key={tag.id} 
-            onClick={() => addTag(tag.name)}
-            onMouseEnter={() => setHighlightedIndex(index)}>
-              {tag.name}
+        onKeyDown={handleKeyDown}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        ref={inputBarRef}
+      />
+        <Overlay
+          key={value.length}
+          target={inputBarRef.current} 
+          show={focused} 
+          placement="bottom-start"
+          transition={false}
+        >
+        {(props) => (
+          <div 
+            {...props} 
+            className="mla-tags-search border mt-1 p-2"
+            style={{
+              ...props.style,
+              zIndex: 999999,
+              maxHeight: "200px",
+              overflowY: "auto",
+              width: inputBarRef.current.offsetWidth
+            }} 
+          >
+            <div ref={listRef}>
+              {filteredTags.map((tag, index) => (
+                <div 
+                  className={`mla-tags-search-item ${index === highlightedIndex ? 'highlight' : ''}`}
+                  key={tag.id} 
+                  onMouseDown={() => addTag(tag.name)}
+                  onMouseEnter={() => setHighlightedIndex(index)}
+                >
+                  {tag.name}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
+          </div>
+        )}
+      </Overlay>
     </div>
   );
 }
